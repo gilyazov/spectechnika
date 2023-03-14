@@ -16,11 +16,13 @@ use \Technika\Core\Tools;
     <div class="site-container">
         <div class="comparison__top js-comparison-fixed-parent">
             <div class="comparison__top-down-row">
-                <a class="comparison__top-down" href="#">
-                    <svg class="icon icon-download comparison__top-down-icon" width="24" height="24">
-                        <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#download"></use>
-                    </svg><span class="comparison__top-down-text">Скачать сравнение моделей</span>
-                </a>
+                <? $APPLICATION->IncludeComponent(
+                    "spectechnika:print.kp",
+                    "comparison__top-down",
+                    [
+                        "ITEMS" => array_keys($arResult)
+                    ]
+                ); ?>
             </div>
             <div class="comparison-fixed__swiper-wrapper">
                 <div class="comparison-fixed__swiper swiper js-comparison-fixed__swiper">

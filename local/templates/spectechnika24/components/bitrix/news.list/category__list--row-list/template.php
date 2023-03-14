@@ -80,8 +80,11 @@ $this->setFrameMode(true);
 <div class="configurator__tabs-buttons">
     <div class="configurator__tabs-button configurator__tabs-button-prev button-border-line"><span>Назад</span>
     </div>
-    <a class="configurator__tabs-button configurator__tabs-button-next button-primary button-primary--large"
-       href="<?=$APPLICATION->GetCurPageParam("archive=yes", array("archive"))?>">
-        <span>Распечатать<span class="configurator__tabs-button-next-text">список</span></span>
-    </a>
+    <? $APPLICATION->IncludeComponent(
+        "spectechnika:print.kp",
+        "",
+        [
+            "ITEMS" => $arResult["ITEMS_ID"]
+        ]
+    ); ?>
 </div>

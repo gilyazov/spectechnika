@@ -17,3 +17,7 @@ if ($_REQUEST["archive"])
         LocalRedirect('/tmp.zip');
     }
 }
+
+foreach ($arResult["ITEMS"] as $arItem){
+    $arResult["ITEMS_ID"][] = $arItem["ID"];
+}
