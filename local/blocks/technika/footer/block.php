@@ -91,7 +91,7 @@
                             <div class="line-form__input-wrapper">
                                 <input class="line-form__input" type="text" placeholder="Email">
                                 <button class="line-form__button line-form__button--text button-primary button-primary--black" type="submit">Подписаться</button>
-                                <button class="line-form__button line-form__button--icon button-primary button-primary--black" type="submit">
+                                <button class="line-form__button line-form__button--icon" type="submit">
                                     <svg class="icon icon-form-arrow">
                                         <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-mono.svg#form-arrow"></use>
                                     </svg>
