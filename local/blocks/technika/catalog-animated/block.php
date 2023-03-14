@@ -11,7 +11,7 @@
                         <div class="link-tip__head">
                             <div class="link-tip__icon">
                                 <svg class="icon icon-link-arrow">
-                                    <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-multi.svg#link-arrow"></use>
+                                    <use xlink:href="assets/images/sprites/sprite-multi.svg#link-arrow"></use>
                                 </svg>
                             </div>
                             <div class="link-tip__text">В нашем каталоге присутствуют&nbsp;более 300 моделей&nbsp;под любые задачи</div>
@@ -64,7 +64,6 @@
                 </div>
             </div>
         </div>
-
         <div class="slider-layout">
             <div class="slider-layout__body">
                 <div class="slider-layout__sidebar"></div>
@@ -72,164 +71,148 @@
                     <div class="ads__body">
                         <div class="ads__head">
                             <div class="ads__button-wrapper">
-                                <button class="ads__button _active button-text" data-value="new">Новинки</button><span class="ads__counter" data-value="new-counter">5</span>
+                                <?php
+                                global $arrFilter;
+                                $arrFilter = [
+                                    "PROPERTY_NEW_VALUE" => "Да",
+                                    "IBLOCK_ID" => 1,
+                                    "ACTIVE" => "Y"
+                                ];
+                                $count = CIBlockElement::GetList(false, $arrFilter, array('IBLOCK_ID'))->Fetch()['CNT'];
+                                ?>
+                                <button class="ads__button _active button-text" data-value="new">Новинки</button><span class="ads__counter" data-counter="new-counter"><?=$count?></span>
                             </div>
                             <div class="ads__button-wrapper">
-                                <button class="ads__button button-text" data-value="discount">Скидки</button><span class="ads__counter" data-value="discount-counter">20</span>
+                                <?php
+                                global $arrFilterDiscount;
+                                $arrFilterDiscount = [
+                                    "PROPERTY_DISCOUNTS_VALUE" => "Да",
+                                    "IBLOCK_ID" => 1,
+                                    "ACTIVE" => "Y"
+                                ];
+                                $count = CIBlockElement::GetList(false, $arrFilterDiscount, array('IBLOCK_ID'))->Fetch()['CNT'];
+                                ?>
+                                <button class="ads__button button-text" data-value="discount">Скидки</button><span class="ads__counter" data-counter="discount-counter"><?=$count?></span>
                             </div>
                         </div>
                         <div class="slider-layout__slider-wrapper ads__outer-wrapper">
-                            <div class="slider-layout__slider ads__slider swiper js-swiper-ads">
-                                <div class="slider-layout__list ads__list swiper-wrapper">
-                                    <div class="ads__item swiper-slide">
-                                        <div class="card">
-                                            <div class="card__body">
-                                                <div class="card__image">
-                                                    <picture>
-                                                        <source type="image/webp" data-srcset="assets/images/cards/img-1.webp" alt="карточка товара производителя &quot;СпецТехника&quot;" srcset="assets/images/placeholder.png">
-                                                        <img class="lazy" data-src="assets/images/cards/img-1.jpg" src="#" alt="карточка товара производителя &quot;СпецТехника&quot;">
-                                                    </picture>
-                                                </div>
-                                                <div class="card__info">
-                                                    <div class="card__heading">
-                                                        <h5 class="card__title">КАМАЗ 54901-004-92</h5>
-                                                        <ul class="card__features">
-                                                            <li class="card__feature"><span class="card__feature-name">Колесная формула</span><span class="card__feature-value">4х2</span>
-                                                            </li>
-                                                            <li class="card__feature"><span class="card__feature-name">Тип ошинковки</span><span class="card__feature-value">2</span>
-                                                            </li>
-                                                            <li class="card__feature"><span class="card__feature-name">Г/п, т (наг./ССУ)</span><span class="card__feature-value">10,82</span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="card__bottom">
-                                                        <div class="card__price"><span>от 5 500 000 ₽</span>
-                                                        </div>
-                                                        <div class="card__controls">
-                                                            <button class="button-primary button-primary--medium" data-path="product-request-modal" type="button">Заказать</button>
-                                                            <a class="card__link primary-link" href="#">
-                                                                <svg class="icon icon-comparison">
-                                                                    <use xlink:href="assets/images/sprites/sprite-mono.svg#comparison"></use>
-                                                                </svg><span class="link-text">В сравнение</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ads__item swiper-slide">
-                                        <div class="card">
-                                            <div class="card__body">
-                                                <div class="card__image">
-                                                    <picture>
-                                                        <source type="image/webp" data-srcset="assets/images/cards/img-1.webp" alt="карточка товара производителя &quot;СпецТехника&quot;" srcset="assets/images/placeholder.png">
-                                                        <img class="lazy" data-src="assets/images/cards/img-1.jpg" src="#" alt="карточка товара производителя &quot;СпецТехника&quot;">
-                                                    </picture>
-                                                </div>
-                                                <div class="card__info">
-                                                    <div class="card__heading">
-                                                        <h5 class="card__title">КАМАЗ 54901-004-92</h5>
-                                                        <ul class="card__features">
-                                                            <li class="card__feature"><span class="card__feature-name">Колесная формула</span><span class="card__feature-value">4х2</span>
-                                                            </li>
-                                                            <li class="card__feature"><span class="card__feature-name">Тип ошинковки</span><span class="card__feature-value">2</span>
-                                                            </li>
-                                                            <li class="card__feature"><span class="card__feature-name">Г/п, т (наг./ССУ)</span><span class="card__feature-value">10,82</span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="card__bottom">
-                                                        <div class="card__price"><span>от 5 500 000 ₽</span>
-                                                        </div>
-                                                        <div class="card__controls">
-                                                            <button class="button-primary button-primary--medium" data-path="product-request-modal" type="button">Заказать</button>
-                                                            <a class="card__link primary-link" href="#">
-                                                                <svg class="icon icon-comparison">
-                                                                    <use xlink:href="assets/images/sprites/sprite-mono.svg#comparison"></use>
-                                                                </svg><span class="link-text">В сравнение</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ads__item swiper-slide">
-                                        <div class="card">
-                                            <div class="card__body">
-                                                <div class="card__image">
-                                                    <picture>
-                                                        <source type="image/webp" data-srcset="assets/images/cards/img-1.webp" alt="карточка товара производителя &quot;СпецТехника&quot;" srcset="assets/images/placeholder.png">
-                                                        <img class="lazy" data-src="assets/images/cards/img-1.jpg" src="#" alt="карточка товара производителя &quot;СпецТехника&quot;">
-                                                    </picture>
-                                                </div>
-                                                <div class="card__info">
-                                                    <div class="card__heading">
-                                                        <h5 class="card__title">КАМАЗ 54901-004-92</h5>
-                                                        <ul class="card__features">
-                                                            <li class="card__feature"><span class="card__feature-name">Колесная формула</span><span class="card__feature-value">4х2</span>
-                                                            </li>
-                                                            <li class="card__feature"><span class="card__feature-name">Тип ошинковки</span><span class="card__feature-value">2</span>
-                                                            </li>
-                                                            <li class="card__feature"><span class="card__feature-name">Г/п, т (наг./ССУ)</span><span class="card__feature-value">10,82</span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="card__bottom">
-                                                        <div class="card__price"><span>от 5 500 000 ₽</span>
-                                                        </div>
-                                                        <div class="card__controls">
-                                                            <button class="button-primary button-primary--medium" data-path="product-request-modal" type="button">Заказать</button>
-                                                            <a class="card__link primary-link" href="#">
-                                                                <svg class="icon icon-comparison">
-                                                                    <use xlink:href="assets/images/sprites/sprite-mono.svg#comparison"></use>
-                                                                </svg><span class="link-text">В сравнение</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="ads__item swiper-slide">
-                                        <div class="card">
-                                            <div class="card__body">
-                                                <div class="card__image">
-                                                    <picture>
-                                                        <source type="image/webp" data-srcset="assets/images/cards/img-1.webp" alt="карточка товара производителя &quot;СпецТехника&quot;" srcset="assets/images/placeholder.png">
-                                                        <img class="lazy" data-src="assets/images/cards/img-1.jpg" src="#" alt="карточка товара производителя &quot;СпецТехника&quot;">
-                                                    </picture>
-                                                </div>
-                                                <div class="card__info">
-                                                    <div class="card__heading">
-                                                        <h5 class="card__title">КАМАЗ 54901-004-92</h5>
-                                                        <ul class="card__features">
-                                                            <li class="card__feature"><span class="card__feature-name">Колесная формула</span><span class="card__feature-value">4х2</span>
-                                                            </li>
-                                                            <li class="card__feature"><span class="card__feature-name">Тип ошинковки</span><span class="card__feature-value">2</span>
-                                                            </li>
-                                                            <li class="card__feature"><span class="card__feature-name">Г/п, т (наг./ССУ)</span><span class="card__feature-value">10,82</span>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="card__bottom">
-                                                        <div class="card__price"><span>от 5 500 000 ₽</span>
-                                                        </div>
-                                                        <div class="card__controls">
-                                                            <button class="button-primary button-primary--medium" data-path="product-request-modal" type="button">Заказать</button>
-                                                            <a class="card__link primary-link" href="#">
-                                                                <svg class="icon icon-comparison">
-                                                                    <use xlink:href="assets/images/sprites/sprite-mono.svg#comparison"></use>
-                                                                </svg><span class="link-text">В сравнение</span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="slider-layout__slider ads__slider swiper js-swiper-ads" data-path="new">
+                                <?$APPLICATION->IncludeComponent(
+                                    "bitrix:news.list",
+                                    "slider-layout__list",
+                                    Array(
+                                        "ACTIVE_DATE_FORMAT" => "d F Y",
+                                        "ADD_SECTIONS_CHAIN" => "N",
+                                        "AJAX_MODE" => "N",
+                                        "AJAX_OPTION_ADDITIONAL" => "",
+                                        "AJAX_OPTION_HISTORY" => "N",
+                                        "AJAX_OPTION_JUMP" => "N",
+                                        "AJAX_OPTION_STYLE" => "N",
+                                        "CACHE_FILTER" => "N",
+                                        "CACHE_GROUPS" => "N",
+                                        "CACHE_TIME" => "36000000",
+                                        "CACHE_TYPE" => "A",
+                                        "CHECK_DATES" => "Y",
+                                        "DETAIL_URL" => "",
+                                        "DISPLAY_BOTTOM_PAGER" => "N",
+                                        "DISPLAY_DATE" => "N",
+                                        "DISPLAY_NAME" => "N",
+                                        "DISPLAY_PICTURE" => "N",
+                                        "DISPLAY_PREVIEW_TEXT" => "N",
+                                        "DISPLAY_TOP_PAGER" => "N",
+                                        "FIELD_CODE" => array("TAGS",""),
+                                        "FILTER_NAME" => "arrFilter",
+                                        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                                        "IBLOCK_ID" => "1",
+                                        "IBLOCK_TYPE" => "catalog",
+                                        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                                        "INCLUDE_SUBSECTIONS" => "Y",
+                                        "MESSAGE_404" => "",
+                                        "NEWS_COUNT" => "10",
+                                        "PAGER_BASE_LINK_ENABLE" => "N",
+                                        "PAGER_DESC_NUMBERING" => "N",
+                                        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                                        "PAGER_SHOW_ALL" => "N",
+                                        "PAGER_SHOW_ALWAYS" => "N",
+                                        "PAGER_TEMPLATE" => ".default",
+                                        "PAGER_TITLE" => "Новости",
+                                        "PARENT_SECTION" => "",
+                                        "PARENT_SECTION_CODE" => "",
+                                        "PREVIEW_TRUNCATE_LEN" => "",
+                                        "PROPERTY_CODE" => array("PRICE",""),
+                                        "SET_BROWSER_TITLE" => "N",
+                                        "SET_LAST_MODIFIED" => "N",
+                                        "SET_META_DESCRIPTION" => "N",
+                                        "SET_META_KEYWORDS" => "N",
+                                        "SET_STATUS_404" => "N",
+                                        "SET_TITLE" => "N",
+                                        "SHOW_404" => "N",
+                                        "SORT_BY1" => "SORT",
+                                        "SORT_BY2" => "TIMESTAMP_X",
+                                        "SORT_ORDER1" => "ASC",
+                                        "SORT_ORDER2" => "ASC",
+                                        "STRICT_SECTION_CHECK" => "N"
+                                    )
+                                );?>
+                            </div>
+                            <div class="slider-layout__slider ads__slider swiper js-swiper-ads ads__slider--hidden" data-path="discount">
+                                <?$APPLICATION->IncludeComponent(
+                                    "bitrix:news.list",
+                                    "slider-layout__list",
+                                    Array(
+                                        "ACTIVE_DATE_FORMAT" => "d F Y",
+                                        "ADD_SECTIONS_CHAIN" => "N",
+                                        "AJAX_MODE" => "N",
+                                        "AJAX_OPTION_ADDITIONAL" => "",
+                                        "AJAX_OPTION_HISTORY" => "N",
+                                        "AJAX_OPTION_JUMP" => "N",
+                                        "AJAX_OPTION_STYLE" => "N",
+                                        "CACHE_FILTER" => "N",
+                                        "CACHE_GROUPS" => "N",
+                                        "CACHE_TIME" => "36000000",
+                                        "CACHE_TYPE" => "A",
+                                        "CHECK_DATES" => "Y",
+                                        "DETAIL_URL" => "",
+                                        "DISPLAY_BOTTOM_PAGER" => "N",
+                                        "DISPLAY_DATE" => "N",
+                                        "DISPLAY_NAME" => "N",
+                                        "DISPLAY_PICTURE" => "N",
+                                        "DISPLAY_PREVIEW_TEXT" => "N",
+                                        "DISPLAY_TOP_PAGER" => "N",
+                                        "FIELD_CODE" => array("TAGS",""),
+                                        "FILTER_NAME" => "arrFilterDiscount",
+                                        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                                        "IBLOCK_ID" => "1",
+                                        "IBLOCK_TYPE" => "catalog",
+                                        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                                        "INCLUDE_SUBSECTIONS" => "Y",
+                                        "MESSAGE_404" => "",
+                                        "NEWS_COUNT" => "10",
+                                        "PAGER_BASE_LINK_ENABLE" => "N",
+                                        "PAGER_DESC_NUMBERING" => "N",
+                                        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+                                        "PAGER_SHOW_ALL" => "N",
+                                        "PAGER_SHOW_ALWAYS" => "N",
+                                        "PAGER_TEMPLATE" => ".default",
+                                        "PAGER_TITLE" => "Новости",
+                                        "PARENT_SECTION" => "",
+                                        "PARENT_SECTION_CODE" => "",
+                                        "PREVIEW_TRUNCATE_LEN" => "",
+                                        "PROPERTY_CODE" => array("PRICE",""),
+                                        "SET_BROWSER_TITLE" => "N",
+                                        "SET_LAST_MODIFIED" => "N",
+                                        "SET_META_DESCRIPTION" => "N",
+                                        "SET_META_KEYWORDS" => "N",
+                                        "SET_STATUS_404" => "N",
+                                        "SET_TITLE" => "N",
+                                        "SHOW_404" => "N",
+                                        "SORT_BY1" => "SORT",
+                                        "SORT_BY2" => "TIMESTAMP_X",
+                                        "SORT_ORDER1" => "ASC",
+                                        "SORT_ORDER2" => "ASC",
+                                        "STRICT_SECTION_CHECK" => "N"
+                                    )
+                                );?>
                             </div>
                         </div>
                     </div>

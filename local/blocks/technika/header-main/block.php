@@ -85,7 +85,7 @@
                             </div>
                         </li>
                         <li class="site-controls__item">
-                            <a class="site-controls__link site-controls__link--compare primary-link" href="#">
+                            <a class="site-controls__link site-controls__link--compare primary-link" href="/compare/">
                                 <svg class="icon icon-compare">
                                     <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-mono.svg#compare"></use>
                                 </svg><span class="link-text">Сравнение</span>

@@ -13,13 +13,13 @@ $linkText = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_error
         <div class="modal__content">
             <button class="button-reset modal__close-btn modal-close" type="button">
                 <svg class="icon icon-delete">
-                    <use xlink:href="<?=SITE_TEMPLATE_PATH?>/assets/images/sprites/sprite-mono.svg#delete"></use>
+                    <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#delete"></use>
                 </svg>
             </button>
             <div class="modal__response">
                 <div class="modal__status-icon">
                     <svg class="icon icon-union-red">
-                        <use xlink:href="<?=SITE_TEMPLATE_PATH?>/assets/images/sprites/sprite-multi.svg#union-red"></use>
+                        <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-multi.svg#union-red"></use>
                     </svg>
                 </div>
                 <div class="modal__response-body">

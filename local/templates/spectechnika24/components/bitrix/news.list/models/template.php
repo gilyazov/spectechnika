@@ -74,11 +74,11 @@ $this->setFrameMode(true);
                                                             </div>
                                                             <div class="card__controls">
                                                                 <button class="button-primary button-primary--medium">Заказать</button>
-                                                                <button class="button-secondary button-secondary--small button-secondary--non-border">
+                                                                <a href="/compare/?action=ADD_TO_COMPARE_LIST&id=<?=$arItem["ID"]?>" class="button-secondary button-secondary--small button-secondary--non-border">
                                                                     <svg class="icon icon-comparison">
-                                                                        <use xlink:href="assets/images/sprites/sprite-mono.svg#comparison"></use>
+                                                                        <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#comparison"></use>
                                                                     </svg><span>В сравнение</span>
-                                                                </button>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>

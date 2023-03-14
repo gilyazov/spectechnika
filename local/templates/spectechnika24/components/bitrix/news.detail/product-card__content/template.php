@@ -42,7 +42,7 @@ $this->setFrameMode(true);
                 <?php if($offer = $arResult["PROPERTIES"]["OFFER"]["VALUE"]):?>
                     <a class="product-card__download product-card__button" href="<?=CFile::GetPath($offer)?>" download>Скачать КП</a>
                 <?php endif;?>
-                <a class="product-card__compare product-card__button" href="#">
+                <a class="product-card__compare product-card__button" href="/compare/?action=ADD_TO_COMPARE_LIST&id=<?=$arResult["ID"]?>">
                     <svg class="icon icon-compare">
                         <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#compare"></use>
                     </svg><span>сравнить</span>

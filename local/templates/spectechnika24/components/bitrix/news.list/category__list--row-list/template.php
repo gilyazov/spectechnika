@@ -13,8 +13,10 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<span class="configurator__tabs-content-page-title">3. Выбранная конфигурация</span>
+<fieldset class="configurator__tabs-content-total">
 <?php if($arResult["ITEMS"]):?>
-    <ul class="category__list category__list--wrap">
+    <ul class="category__list category__list--row-list">
         <?php foreach ($arResult["ITEMS"] as $arItem): ?>
             <li class="category__item">
                 <div class="category__card card">
@@ -60,10 +62,7 @@ $this->setFrameMode(true);
                                 </div>
                                 <div class="card__controls">
                                     <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="button-primary button-primary--medium">Подробнее</a>
-                                    <a
-                                        class="card__link primary-link ~js-comparison-btn"
-                                        data-id="<?=$arItem["ID"]?>"
-                                        href="/compare/?action=ADD_TO_COMPARE_LIST&id=<?=$arItem["ID"]?>">
+                                    <a class="card__link primary-link" href="/compare/?action=ADD_TO_COMPARE_LIST&id=<?=$arItem["ID"]?>">
                                         <svg class="icon icon-comparison">
                                             <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#comparison"></use>
                                         </svg><span class="link-text">В сравнение</span>
@@ -77,3 +76,12 @@ $this->setFrameMode(true);
         <?php endforeach; ?>
     </ul>
 <?php endif;?>
+</fieldset>
+<div class="configurator__tabs-buttons">
+    <div class="configurator__tabs-button configurator__tabs-button-prev button-border-line"><span>Назад</span>
+    </div>
+    <a class="configurator__tabs-button configurator__tabs-button-next button-primary button-primary--large"
+       href="<?=$APPLICATION->GetCurPageParam("archive=yes", array("archive"))?>">
+        <span>Распечатать<span class="configurator__tabs-button-next-text">список</span></span>
+    </a>
+</div>

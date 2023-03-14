@@ -7,7 +7,7 @@
             <div class="footer__callback">
                 <a class="primary-link primary-link--large" href="tel:88005505812"><span class="link-text">8 800 550 58 12</span><span class="label-text">По общим вопросам</span>
                 </a>
-                <button class="button-primary">обратный звонок</button>
+                <button class="button-primary" data-path="callback-modal" type="button">обратный звонок</button>
             </div>
         </div>
         <div class="footer__bottom">
@@ -19,84 +19,61 @@
                     </div>
                 </div>
                 <div class="footer__col footer__col--large">
-                    <div class="footer__catalog-links catalog-links">
-                        <ul class="catalog-links__list">
-                            <li class="catalog-links__item">
-                                <a class="catalog-links__link primary-link" href=""><span class="link-text">Тягачи</span>
-                                </a>
-                            </li>
-                            <li class="catalog-links__item">
-                                <a class="catalog-links__link primary-link" href=""><span class="link-text">Самосвалы</span>
-                                </a>
-                            </li>
-                            <li class="catalog-links__item">
-                                <a class="catalog-links__link primary-link" href=""><span class="link-text">Бортовые</span>
-                                </a>
-                            </li>
-                            <li class="catalog-links__item">
-                                <a class="catalog-links__link primary-link" href=""><span class="link-text">Зерновозы</span>
-                                </a>
-                            </li>
-                            <li class="catalog-links__item">
-                                <a class="catalog-links__link primary-link" href=""><span class="link-text">Фургоны</span>
-                                </a>
-                            </li>
-                            <li class="catalog-links__item">
-                                <a class="catalog-links__link primary-link" href=""><span class="link-text">Автокраны</span>
-                                </a>
-                            </li>
-                            <li class="catalog-links__item">
-                                <a class="catalog-links__link primary-link" href=""><span class="link-text">Сортиментовозы</span>
-                                </a>
-                            </li>
-                            <li class="catalog-links__item">
-                                <a class="catalog-links__link primary-link" href=""><span class="link-text">Автобетоносмесители</span>
-                                </a>
-                            </li>
-                            <li class="catalog-links__item">
-                                <a class="catalog-links__link primary-link" href=""><span class="link-text">Камазы с бортовымими КМУ</span>
-                                </a>
-                            </li>
-                            <li class="catalog-links__item">
-                                <a class="catalog-links__link primary-link" href=""><span class="link-text">Комунально-дорожная техника</span>
-                                </a>
-                            </li>
-                            <li class="catalog-links__item">
-                                <a class="catalog-links__link primary-link" href=""><span class="link-text">Автоцистерны</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:catalog.section.list",
+                        "catalog-links",
+                        array(
+                            "COMPONENT_TEMPLATE" => ".default",
+                            "IBLOCK_TYPE" => "catalog",
+                            "IBLOCK_ID" => "1",
+                            "SECTION_ID" => $_REQUEST["SECTION_ID"],
+                            "SECTION_CODE" => "",
+                            "COUNT_ELEMENTS" => "Y",
+                            "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
+                            "ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
+                            "HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
+                            "TOP_DEPTH" => "1",
+                            "SECTION_FIELDS" => array(
+                                0 => "",
+                                1 => "",
+                            ),
+                            "SECTION_USER_FIELDS" => array(
+                                0 => "",
+                                1 => "",
+                            ),
+                            "FILTER_NAME" => "sectionsFilter",
+                            "VIEW_MODE" => "LINE",
+                            "SHOW_PARENT_NAME" => "Y",
+                            "SECTION_URL" => "",
+                            "CACHE_TYPE" => "A",
+                            "CACHE_TIME" => "36000000",
+                            "CACHE_GROUPS" => "Y",
+                            "CACHE_FILTER" => "N",
+                            "ADD_SECTIONS_CHAIN" => "N"
+                        ),
+                        false
+                    );?>
                 </div>
                 <div class="footer__col footer__col--small footer__col--second">
-                    <nav class="footer__nav nav nav--vert">
-                        <ul class="nav__list">
-                            <li class="nav__item">
-                                <a class="nav__link nav__link--large primary-link" href="./page-leasing.html"><span class="link-text">Лизинг</span>
-                                </a>
-                            </li>
-                            <li class="nav__item">
-                                <a class="nav__link nav__link--large primary-link" href="./page-services.html"><span class="link-text">Услуги</span>
-                                </a>
-                            </li>
-                            <li class="nav__item">
-                                <a class="nav__link nav__link--large primary-link" href="./page-videoreviews.html"><span class="link-text">Видео обзоры</span>
-                                </a>
-                            </li>
-                            <li class="nav__item">
-                                <a class="nav__link nav__link--large primary-link" href="./page-partners.html"><span class="link-text">Наши партнеры</span>
-                                </a>
-                            </li>
-                            <li class="nav__item">
-                                <a class="nav__link nav__link--large primary-link" href="./page-about.html"><span class="link-text">О нас</span>
-                                </a>
-                            </li>
-                            <li class="nav__item">
-                                <a class="nav__link nav__link--large primary-link" href="./page-contacts.html"><span class="link-text">Контакты</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "footer__nav",
+                        array(
+                            "ALLOW_MULTI_SELECT" => "N",
+                            "CHILD_MENU_TYPE" => "left",
+                            "DELAY" => "N",
+                            "MAX_LEVEL" => "1",
+                            "MENU_CACHE_GET_VARS" => array(
+                            ),
+                            "MENU_CACHE_TIME" => "3600",
+                            "MENU_CACHE_TYPE" => "N",
+                            "MENU_CACHE_USE_GROUPS" => "Y",
+                            "ROOT_MENU_TYPE" => "top",
+                            "USE_EXT" => "N",
+                            "COMPONENT_TEMPLATE" => ".default"
+                        ),
+                        false
+                    );?>
                 </div>
             </div>
             <div class="footer__row">
@@ -116,7 +93,7 @@
                                 <button class="line-form__button line-form__button--text button-primary button-primary--black" type="submit">Подписаться</button>
                                 <button class="line-form__button line-form__button--icon button-primary button-primary--black" type="submit">
                                     <svg class="icon icon-form-arrow">
-                                        <use xlink:href="assets/images/sprites/sprite-mono.svg#form-arrow"></use>
+                                        <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-mono.svg#form-arrow"></use>
                                     </svg>
                                 </button>
                             </div>
@@ -126,7 +103,7 @@
                 <div class="footer__col footer__col--small">
                     <a class="footer__dev dev" href="#"><span class="dev__span">Сайт разработан</span>
                         <svg class="icon icon-dev-logo">
-                            <use xlink:href="assets/images/sprites/sprite-multi.svg#dev-logo"></use>
+                            <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-multi.svg#dev-logo"></use>
                         </svg>
                     </a>
                 </div>

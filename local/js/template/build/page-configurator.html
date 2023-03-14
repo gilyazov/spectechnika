@@ -517,25 +517,25 @@
                     <div class="configurator__tabs-content active"><span class="configurator__tabs-content-page-title">1. Выберите тип кузова</span>
                       <fieldset class="configurator__tabs-content-body">
                         <label class="configurator__tabs-content-body-label">
-                          <input class="configurator__tabs-content-body-input visually-hidden" type="checkbox">
+                          <input class="configurator__tabs-content-body-input visually-hidden" type="radio" name="body type" checked="checked">
                           <div class="configurator__tabs-content-body-box">
                             <img class="configurator__tabs-content-body-img" src="assets/images/configurator/body-1.png" alt="Тип кузова"><span class="configurator__tabs-content-body-text">Седельные тягачи</span>
                           </div>
                         </label>
                         <label class="configurator__tabs-content-body-label">
-                          <input class="configurator__tabs-content-body-input visually-hidden" type="checkbox">
+                          <input class="configurator__tabs-content-body-input visually-hidden" type="radio" name="body type">
                           <div class="configurator__tabs-content-body-box">
                             <img class="configurator__tabs-content-body-img" src="assets/images/configurator/body-2.png" alt="Тип кузова"><span class="configurator__tabs-content-body-text">Камазы бортовые с КМУ</span>
                           </div>
                         </label>
                         <label class="configurator__tabs-content-body-label">
-                          <input class="configurator__tabs-content-body-input visually-hidden" type="checkbox">
+                          <input class="configurator__tabs-content-body-input visually-hidden" type="radio" name="body type">
                           <div class="configurator__tabs-content-body-box">
                             <img class="configurator__tabs-content-body-img" src="assets/images/configurator/body-3.png" alt="Тип кузова"><span class="configurator__tabs-content-body-text">Зерновозы</span>
                           </div>
                         </label>
                         <label class="configurator__tabs-content-body-label">
-                          <input class="configurator__tabs-content-body-input visually-hidden" type="checkbox">
+                          <input class="configurator__tabs-content-body-input visually-hidden" type="radio" name="body type">
                           <div class="configurator__tabs-content-body-box">
                             <img class="configurator__tabs-content-body-img" src="assets/images/configurator/body-4.png" alt="Тип кузова"><span class="configurator__tabs-content-body-text">Фургоны</span>
                           </div>
@@ -550,22 +550,22 @@
                         <div class="configurator__tabs-content-subtitle">Колесная формула</div>
                         <fieldset class="configurator__tabs-content-contain">
                           <label class="configurator__tabs-content-parameters-label">
-                            <input class="configurator__tabs-content-parameters-input visually-hidden" type="checkbox">
+                            <input class="configurator__tabs-content-parameters-input visually-hidden" type="radio" name="wheel formula" checked="checked">
                             <div class="configurator__tabs-content-parameters-box"><span class="configurator__tabs-content-parameters-text">4x2</span>
                             </div>
                           </label>
                           <label class="configurator__tabs-content-parameters-label">
-                            <input class="configurator__tabs-content-parameters-input visually-hidden" type="checkbox">
+                            <input class="configurator__tabs-content-parameters-input visually-hidden" type="radio" name="wheel formula">
                             <div class="configurator__tabs-content-parameters-box"><span class="configurator__tabs-content-parameters-text">6x2</span>
                             </div>
                           </label>
                           <label class="configurator__tabs-content-parameters-label">
-                            <input class="configurator__tabs-content-parameters-input visually-hidden" type="checkbox">
+                            <input class="configurator__tabs-content-parameters-input visually-hidden" type="radio" name="wheel formula">
                             <div class="configurator__tabs-content-parameters-box"><span class="configurator__tabs-content-parameters-text">6x4</span>
                             </div>
                           </label>
                           <label class="configurator__tabs-content-parameters-label">
-                            <input class="configurator__tabs-content-parameters-input visually-hidden" type="checkbox">
+                            <input class="configurator__tabs-content-parameters-input visually-hidden" type="radio" name="wheel formula">
                             <div class="configurator__tabs-content-parameters-box"><span class="configurator__tabs-content-parameters-text">6x6</span>
                             </div>
                           </label>
@@ -772,7 +772,8 @@
                       <div class="configurator__tabs-buttons">
                         <div class="configurator__tabs-button configurator__tabs-button-prev button-border-line"><span>Назад</span>
                         </div>
-                        <a class="configurator__tabs-button configurator__tabs-button-next button-primary button-primary--large" href="#"><span>Распечатать список</span>
+                        <a class="configurator__tabs-button configurator__tabs-button-next button-primary button-primary--large" href="#"><span>Распечатать<span class="configurator__tabs-button-next-text">список</span>
+                          </span>
                         </a>
                       </div>
                     </div>
@@ -902,7 +903,7 @@
                     <div class="line-form__input-wrapper">
                       <input class="line-form__input" type="text" placeholder="Email">
                       <button class="line-form__button line-form__button--text button-primary button-primary--black" type="submit">Подписаться</button>
-                      <button class="line-form__button line-form__button--icon button-primary button-primary--black" type="submit">
+                      <button class="line-form__button line-form__button--icon" type="submit">
                         <svg class="icon icon-form-arrow">
                           <use xlink:href="assets/images/sprites/sprite-mono.svg#form-arrow"></use>
                         </svg>
