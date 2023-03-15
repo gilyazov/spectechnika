@@ -11,7 +11,7 @@
                         <div class="link-tip__head">
                             <div class="link-tip__icon">
                                 <svg class="icon icon-link-arrow">
-                                    <use xlink:href="assets/images/sprites/sprite-multi.svg#link-arrow"></use>
+                                    <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-multi.svg#link-arrow"></use>
                                 </svg>
                             </div>
                             <div class="link-tip__text">В нашем каталоге присутствуют&nbsp;более 300 моделей&nbsp;под любые задачи</div>
