@@ -8,17 +8,19 @@ use \Bitrix\Landing\Manager;
 
 class CatalogSectionBlock extends \Bitrix\Landing\LandingBlock
 {
-    private int $sectionID;
+    private int $sectionID = 1;
     private string $code;
     public function init(array $params = [])
     {
         $variables = \Bitrix\Landing\Landing::getVariables();
         $this->code = $variables['sef'][0] ?? "";
 
-        $this->params['SECTION_CODE'] = $this->code;
-        $this->params['FILTER_PROPS'] = array_merge($this->getMap($this->code), ["IN_STOCK", "NEW", "DISCOUNTS"]);
+        if ($this->code){
+            $this->params['SECTION_CODE'] = $this->code;
+            $this->params['FILTER_PROPS'] = array_merge($this->getMap($this->code), ["IN_STOCK", "NEW", "DISCOUNTS"]);
 
-        $this->initProps();
+            $this->initProps();
+        }
     }
 
     private function initProps()

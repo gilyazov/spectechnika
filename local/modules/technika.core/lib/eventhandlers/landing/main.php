@@ -22,6 +22,10 @@ class Main
             $APPLICATION->SetPageProperty("BodyClass", $class);
         }
 
+        if ($APPLICATION->GetCurPage() == '/') {
+            $APPLICATION->SetPageProperty("BodyClass", "page-home");
+        }
+
         if ($APPLICATION->GetCurPage() == '/catalog/') {
             $APPLICATION->SetPageProperty("BodyClass", "page-main main");
         }

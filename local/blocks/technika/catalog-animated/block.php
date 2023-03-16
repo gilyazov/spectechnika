@@ -16,7 +16,7 @@
                             </div>
                             <div class="link-tip__text">В нашем каталоге присутствуют&nbsp;более 300 моделей&nbsp;под любые задачи</div>
                         </div>
-                        <a class="button-primary" href="/catalog/">смотреть все</a>
+                        <a class="button-primary landing-node-button" href="/catalog/">смотреть все</a>
                     </div>
                 </div>
                 <div class="cat-layout__main js-swiper-entry">

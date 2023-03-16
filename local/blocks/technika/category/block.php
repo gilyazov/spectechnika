@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="cat-layout__container category__container">
-                                <?php $APPLICATION->IncludeComponent(
+                <?php $APPLICATION->IncludeComponent(
                     "bitrix:catalog.filter",
                     "category__sidebar",
                     Array(

@@ -16,9 +16,10 @@ return array(
 
 	),
 	'nodes' => array(
-        '.section__title' => [
+        '.cat-layout__title' => [
             'name' => 'Заголовок',
-            'type' => 'text'
+            'type' => 'text',
+            'textOnly' => true
         ],
         '.link-tip__text' => [
             'name' => 'Подпись заголовка',

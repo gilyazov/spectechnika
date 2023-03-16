@@ -94,8 +94,4 @@ $this->setFrameMode(true);
             </div>
         </div>
     </div>
-
-    <div class="main-slider__slogan">
-        <div class="main-slide__slogan">Горячее&nbsp;<br>предложение!</div>
-    </div>
 </div>
