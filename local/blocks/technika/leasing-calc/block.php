@@ -14,7 +14,7 @@
                             <div class="range__wrapper">
                                 <div class="range__label">Стоимость</div>
                                 <div class="range__input-wrapper">
-                                    <input class="range__input" type="range" required="required" name="cost" id="costInput" min="100000" max="3500000" value="3500000">
+                                    <input class="range__input styled-slider slider-progress" type="range" required="required" name="cost" id="costInput" min="100000" max="3500000" value="3500000">
                                 </div>
                                 <div class="range__values">
                                     <div class="range__input-value">
@@ -29,7 +29,7 @@
                             <div class="range__wrapper">
                                 <div class="range__label">Аванс</div>
                                 <div class="range__input-wrapper">
-                                    <input class="range__input" type="range" required="required" name="prepayment" id="prepaymentInput" min="10000" max="3500000" value="3500000">
+                                    <input class="range__input styled-slider slider-progress" type="range" required="required" name="prepayment" id="prepaymentInput" min="10000" max="3500000" value="3500000">
                                 </div>
                                 <div class="range__values">
                                     <div class="range__input-value">
@@ -46,7 +46,7 @@
                             <div class="range__wrapper">
                                 <div class="range__label">Срок</div>
                                 <div class="range__input-wrapper">
-                                    <input class="range__input" type="range" required="required" name="term" id="termInput" min="12" max="36" value="36">
+                                    <input class="range__input styled-slider slider-progress" type="range" required="required" name="term" id="termInput" min="12" max="36" value="36">
                                 </div>
                                 <div class="range__values">
                                     <div class="range__input-value">
