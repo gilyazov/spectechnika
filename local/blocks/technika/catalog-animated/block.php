@@ -1,5 +1,5 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
-
+<?\Bitrix\Main\Loader::includeModule('iblock')?>
 <section class="catalog--animated catalog cat-layout cat-layout--animated">
     <div class="section__title visually-hidden">section main title</div>
     <div class="site-container">
