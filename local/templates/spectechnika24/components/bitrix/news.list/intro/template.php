@@ -41,7 +41,7 @@ $this->setFrameMode(true);
                         <a class="main-slide__link" href="<?=$a['href']?>">
                             <div class="main-slide__info">
                                 <div class="main-slide__title h4-text">
-                                    <span class="link-text"><?=$arItem["~NAME"]?></span>
+                                    <?=$arItem["~NAME"]?>
                                 </div>
                                 <div class="main-slide__features">
                                     <?foreach ($arItem["PROPERTIES"]["FEATURE"]["VALUE"] as $arFeature):?>
@@ -59,9 +59,7 @@ $this->setFrameMode(true);
                                         <img src="<?=\Technika\Core\Tools::resizeImage($arItem["PREVIEW_PICTURE"]["ID"], 600, 300, true)?>" alt="<?=$arItem["NAME"]?>">
                                     </picture>
                                 </div>
-                                <div class="main-slide__button">
-                                    <span class="_circle-wrapper">
-                                        <span class="_circle"></span>
+                                <div class="main-slide__button"><span class="_circle-wrapper"><span class="_circle"></span>
                                       <svg class="icon icon-arrow-r">
                                         <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-mono.svg#arrow-r"></use>
                                       </svg>
@@ -83,12 +81,12 @@ $this->setFrameMode(true);
             <div class="button-slider-wrapper">
                 <button class="button-slider button-slider--left main-slider__button main-slider__button--prev" type="button">
                     <svg class="icon icon-v-arrow-l">
-                        <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-mono.svg#v-arrow-l"></use>
+                        <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#v-arrow-l"></use>
                     </svg>
                 </button>
                 <button class="button-slider button-slider--rigth main-slider__button main-slider__button--next" type="button">
                     <svg class="icon icon-v-arrow-r">
-                        <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-mono.svg#v-arrow-r"></use>
+                        <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#v-arrow-r"></use>
                     </svg>
                 </button>
             </div>

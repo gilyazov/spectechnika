@@ -9,7 +9,7 @@ $linkText = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_succe
 $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_link");
 ?>
 
-<div class="modal">
+<div class="modal modal--big-index">
     <div class="modal__container" data-target="callback-modal">
         <div class="modal__content">
             <button class="button-reset modal__close-btn modal-close" type="button">
@@ -35,13 +35,13 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
                     <div class="form__controls">
                         <div class="form__inputs">
                             <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_text" type="text" placeholder="Ваше имя" name="name" required>
+                                <input class="form__input input input--dark js-input-mask_text" type="text" placeholder="Ваше имя" name="name" required autocomplete="off">
                             </div>
                             <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_phone" type="text" placeholder="Телефон" name="phone" required>
+                                <input class="form__input input input--dark js-input-mask_phone" type="text" placeholder="Телефон" name="phone" required autocomplete="off">
                             </div>
                             <div class="form__input-wrapper">
-                                <input class="form__input input input--dark" type="text" placeholder="Комментарий" name="comment" required>
+                                <input class="form__input input input--dark" type="text" placeholder="Комментарий" name="comment" required autocomplete="off">
                             </div>
                         </div>
                         <div class="form__submit">
@@ -63,7 +63,7 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
         </div>
     </div>
 </div>
-<div class="modal">
+<div class="modal modal--big-index">
     <div class="modal__container" data-target="gift-request-modal">
         <div class="modal__content">
             <button class="button-reset modal__close-btn modal-close" type="button">
@@ -91,10 +91,10 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
                     <div class="form__controls">
                         <div class="form__inputs">
                             <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_text" type="text" placeholder="Ваше имя" name="name" required>
+                                <input class="form__input input input--dark js-input-mask_text" autocomplete="off" type="text" placeholder="Ваше имя" name="name" required>
                             </div>
                             <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_phone" type="text" placeholder="Телефон" name="phone" required>
+                                <input class="form__input input input--dark js-input-mask_phone" autocomplete="off" type="text" placeholder="Телефон" name="phone" required>
                             </div>
                         </div>
                         <div class="form__submit">
@@ -118,7 +118,7 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
         </div>
     </div>
 </div>
-<div class="modal">
+<div class="modal modal--big-index">
     <div class="modal__container" data-target="product-request-modal">
         <div class="modal__content">
             <button class="button-reset modal__close-btn modal-close" type="button">
@@ -143,17 +143,17 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
                     <div class="form__controls">
                         <div class="form__inputs">
                             <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_text" type="text" placeholder="Ваше имя" name="name" required>
+                                <input class="form__input input input--dark js-input-mask_text" type="text" placeholder="Ваше имя" name="name" required autocomplete="off">
                             </div>
                             <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_phone" type="text" placeholder="Телефон" name="phone" required>
+                                <input class="form__input input input--dark js-input-mask_phone" type="text" placeholder="Телефон" name="phone" required autocomplete="off">
                             </div>
                             <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_email" type="text" placeholder="E-mail" name="mail" required>
+                                <input class="form__input input input--dark js-input-mask_email" type="text" placeholder="E-mail" name="mail" required autocomplete="off">
                             </div>
                             <div class="form__input-wrapper form__input-wrapper--with-label">
                                 <label class="form__label">Интересующий товар/услуга</label>
-                                <input class="form__input input input--dark" type="text" placeholder="КамАЗ 5490-022-87" name="comment" required>
+                                <input class="form__input input input--dark" type="text" placeholder="КамАЗ 5490-022-87" name="comment" required autocomplete="off">
                             </div>
                         </div>
                         <div class="form__submit">

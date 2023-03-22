@@ -41,6 +41,14 @@ return array(
         )
 	),
     'style' => array(
-
-    )
+        'block' => [
+            'type' => ['video-bg-color']
+        ],
+        'nodes' => [
+            /*'.reviews' => [
+                'name' => 'Цвет фона',
+                'type' => ['video-bg-color']
+            ]*/
+        ],
+    ),
 );

@@ -21,7 +21,7 @@ $this->setFrameMode(true);
         ?>
             <li class="categories-menu__item categories-menu__item--no-list" id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
                 <a class="categories-menu__link" href="<? echo $arSection['SECTION_PAGE_URL']; ?>">
-                    <span class="categories-menu__text"><? echo $arSection['PICTURE']['TITLE']; ?><span class="categories-menu__index-number"><? echo $arSection['ELEMENT_CNT']; ?></span></span>
+                    <span class="categories-menu__text"><? echo $arSection['NAME']; ?><span class="categories-menu__index-number"><? echo $arSection['ELEMENT_CNT']; ?></span></span>
                     <span class="categories-menu__arrow"><svg class="icon icon-arrow-right"><use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#arrow-right"></use></svg></span>
                 </a>
             </li>
