@@ -48,7 +48,7 @@
                                                             "COUNT_ELEMENTS" => "Y",
                                                             "COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",
                                                             "ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
-                                                            "HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N",
+                                                            "HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "Y",
                                                             "TOP_DEPTH" => "1",
                                                             "SECTION_FIELDS" => array(
                                                                 0 => "",
@@ -62,7 +62,7 @@
                                                             "VIEW_MODE" => "LINE",
                                                             "SHOW_PARENT_NAME" => "Y",
                                                             "SECTION_URL" => "",
-                                                            "CACHE_TYPE" => "A",
+                                                            "CACHE_TYPE" => "N",
                                                             "CACHE_TIME" => "36000000",
                                                             "CACHE_GROUPS" => "Y",
                                                             "CACHE_FILTER" => "N",
