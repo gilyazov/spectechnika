@@ -2,7 +2,7 @@
 
 <section class="section company-team">
     <div class="site-container">
-        <div class="cat-layout__container cat-layout__container--1">
+        <div class="cat-layout__container cat-layout__container--1 company-team__heading">
             <div class="cat-layout__sidebar">
                 <div class="company-team__text">
                     Команда наших специалистов собрана из людей с богатым опытом в работе с техникой КамАЗ.

@@ -18,6 +18,7 @@ $this->setFrameMode(true);
             foreach ($arResult['SECTIONS'] as &$arSection){
                 $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
                 $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
+                if (!$arSection['ELEMENT_CNT']) continue;
         ?>
             <li class="categories-menu__item categories-menu__item--no-list" id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
                 <a class="categories-menu__link" href="<? echo $arSection['SECTION_PAGE_URL']; ?>">

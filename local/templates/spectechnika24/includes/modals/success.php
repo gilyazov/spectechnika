@@ -17,7 +17,7 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
                     <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#delete"></use>
                 </svg>
             </button>
-            <form class="modal__form form" action="">
+            <div class="modal__form form">
                 <div class="form__body">
                     <div class="form__heading">
                         <div class="form__titles">
@@ -32,25 +32,45 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
                             </div>
                         </div>
                     </div>
-                    <div class="form__controls">
-                        <div class="form__inputs">
-                            <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_text" type="text" placeholder="Ваше имя" name="name" required autocomplete="off">
-                            </div>
-                            <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_phone" type="text" placeholder="Телефон" name="phone" required autocomplete="off">
-                            </div>
-                            <div class="form__input-wrapper">
-                                <input class="form__input input input--dark" type="text" placeholder="Комментарий" name="comment" required autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="form__submit">
-                            <button class="button-primary button-primary--large js-modal-submit" data-path="error-popup" type="submit">Оставить заявку</button>
-                            <div class="form__submit-text"><span>Нажимая кнопку “Оставить заявку” вы соглашаетесь с&nbsp;</span>
-                                <a href="">политикой конфиденциальности</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php $APPLICATION->IncludeComponent(
+                        "spectechnika:iblock.element.add.form",
+                        "form",
+                        Array(
+                            "PREFIX" => "callback-modal",
+                            "IS_DARK" => "Y",
+                            "THEME" => "Оставьте заявку и получите подарок",
+                            "CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+                            "CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+                            "CUSTOM_TITLE_DETAIL_PICTURE" => "",
+                            "CUSTOM_TITLE_DETAIL_TEXT" => "",
+                            "CUSTOM_TITLE_IBLOCK_SECTION" => "",
+                            "CUSTOM_TITLE_NAME" => "Ваше имя",
+                            "CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+                            "CUSTOM_TITLE_PREVIEW_TEXT" => "",
+                            "CUSTOM_TITLE_TAGS" => "",
+                            "DEFAULT_INPUT_SIZE" => "30",
+                            "DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+                            "ELEMENT_ASSOC" => "CREATED_BY",
+                            "GROUPS" => array("2"),
+                            "IBLOCK_ID" => "4",
+                            "IBLOCK_TYPE" => "forms",
+                            "LEVEL_LAST" => "N",
+                            "LIST_URL" => "",
+                            "MAX_FILE_SIZE" => "0",
+                            "MAX_LEVELS" => "100000",
+                            "MAX_USER_ENTRIES" => "100000",
+                            "PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+                            "PROPERTY_CODES" => array("NAME", 2, 44),
+                            "PROPERTY_CODES_REQUIRED" => array("NAME", 2),
+                            "RESIZE_IMAGES" => "N",
+                            "SEF_MODE" => "N",
+                            "STATUS" => "ANY",
+                            "STATUS_NEW" => "N",
+                            "USER_MESSAGE_ADD" => "Спасибо, ваша заявка отправлена",
+                            "USER_MESSAGE_EDIT" => "",
+                            "USE_CAPTCHA" => "N"
+                        )
+                    );?>
                     <div class="form__contacts">
                         <div class="nav-popup__phone">
                             <div class="nav-popup__label">Отдел продаж</div>
@@ -59,7 +79,7 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
@@ -71,7 +91,7 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
                     <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#delete"></use>
                 </svg>
             </button>
-            <form class="modal__form form" action="">
+            <div class="modal__form form">
                 <div class="form__body">
                     <div class="form__heading">
                         <div class="form__titles">
@@ -88,22 +108,45 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
                             </div>
                         </div>
                     </div>
-                    <div class="form__controls">
-                        <div class="form__inputs">
-                            <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_text" autocomplete="off" type="text" placeholder="Ваше имя" name="name" required>
-                            </div>
-                            <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_phone" autocomplete="off" type="text" placeholder="Телефон" name="phone" required>
-                            </div>
-                        </div>
-                        <div class="form__submit">
-                            <button class="button-primary button-primary--large js-modal-submit" type="submit">Оставить заявку</button>
-                            <div class="form__submit-text"><span>Нажимая кнопку “Оставить заявку” вы соглашаетесь с&nbsp;</span>
-                                <a href="">политикой конфиденциальности</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php $APPLICATION->IncludeComponent(
+                        "spectechnika:iblock.element.add.form",
+                        "form",
+                        Array(
+                            "PREFIX" => "gift-request-modal",
+                            "IS_DARK" => "Y",
+                            "THEME" => "Оставьте заявку и получите подарок",
+                            "CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+                            "CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+                            "CUSTOM_TITLE_DETAIL_PICTURE" => "",
+                            "CUSTOM_TITLE_DETAIL_TEXT" => "",
+                            "CUSTOM_TITLE_IBLOCK_SECTION" => "",
+                            "CUSTOM_TITLE_NAME" => "Ваше имя",
+                            "CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+                            "CUSTOM_TITLE_PREVIEW_TEXT" => "",
+                            "CUSTOM_TITLE_TAGS" => "",
+                            "DEFAULT_INPUT_SIZE" => "30",
+                            "DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+                            "ELEMENT_ASSOC" => "CREATED_BY",
+                            "GROUPS" => array("2"),
+                            "IBLOCK_ID" => "4",
+                            "IBLOCK_TYPE" => "forms",
+                            "LEVEL_LAST" => "N",
+                            "LIST_URL" => "",
+                            "MAX_FILE_SIZE" => "0",
+                            "MAX_LEVELS" => "100000",
+                            "MAX_USER_ENTRIES" => "100000",
+                            "PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+                            "PROPERTY_CODES" => array("NAME", 2),
+                            "PROPERTY_CODES_REQUIRED" => array("NAME", 2),
+                            "RESIZE_IMAGES" => "N",
+                            "SEF_MODE" => "N",
+                            "STATUS" => "ANY",
+                            "STATUS_NEW" => "N",
+                            "USER_MESSAGE_ADD" => "Спасибо, ваша заявка отправлена",
+                            "USER_MESSAGE_EDIT" => "",
+                            "USE_CAPTCHA" => "N"
+                        )
+                    );?>
                     <div class="form__contacts">
                         <div class="nav-popup__phone">
                             <div class="nav-popup__label">Отдел продаж</div>
@@ -114,7 +157,7 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
@@ -126,7 +169,7 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
                     <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#delete"></use>
                 </svg>
             </button>
-            <form class="modal__form form" action="">
+            <div class="modal__form form">
                 <div class="form__body">
                     <div class="form__heading">
                         <div class="form__titles">
@@ -140,29 +183,45 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
                             </div>
                         </div>
                     </div>
-                    <div class="form__controls">
-                        <div class="form__inputs">
-                            <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_text" type="text" placeholder="Ваше имя" name="name" required autocomplete="off">
-                            </div>
-                            <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_phone" type="text" placeholder="Телефон" name="phone" required autocomplete="off">
-                            </div>
-                            <div class="form__input-wrapper">
-                                <input class="form__input input input--dark js-input-mask_email" type="text" placeholder="E-mail" name="mail" required autocomplete="off">
-                            </div>
-                            <div class="form__input-wrapper form__input-wrapper--with-label">
-                                <label class="form__label">Интересующий товар/услуга</label>
-                                <input class="form__input input input--dark" type="text" placeholder="КамАЗ 5490-022-87" name="comment" required autocomplete="off">
-                            </div>
-                        </div>
-                        <div class="form__submit">
-                            <button class="button-primary button-primary--large js-modal-submit" type="submit">Оставить заявку</button>
-                            <div class="form__submit-text"><span>Нажимая кнопку “Оставить заявку” вы соглашаетесь с&nbsp;</span>
-                                <a href="">политикой конфиденциальности</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php $APPLICATION->IncludeComponent(
+                        "spectechnika:iblock.element.add.form",
+                        "form",
+                        Array(
+                            "PREFIX" => "product-request-modal",
+                            "IS_DARK" => "Y",
+                            "THEME" => "Оставьте заявку и получите подарок",
+                            "CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+                            "CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+                            "CUSTOM_TITLE_DETAIL_PICTURE" => "",
+                            "CUSTOM_TITLE_DETAIL_TEXT" => "",
+                            "CUSTOM_TITLE_IBLOCK_SECTION" => "",
+                            "CUSTOM_TITLE_NAME" => "Ваше имя",
+                            "CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+                            "CUSTOM_TITLE_PREVIEW_TEXT" => "",
+                            "CUSTOM_TITLE_TAGS" => "",
+                            "DEFAULT_INPUT_SIZE" => "30",
+                            "DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+                            "ELEMENT_ASSOC" => "CREATED_BY",
+                            "GROUPS" => array("2"),
+                            "IBLOCK_ID" => "4",
+                            "IBLOCK_TYPE" => "forms",
+                            "LEVEL_LAST" => "N",
+                            "LIST_URL" => "",
+                            "MAX_FILE_SIZE" => "0",
+                            "MAX_LEVELS" => "100000",
+                            "MAX_USER_ENTRIES" => "100000",
+                            "PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+                            "PROPERTY_CODES" => array("NAME", 2, 45),
+                            "PROPERTY_CODES_REQUIRED" => array("NAME", 2),
+                            "RESIZE_IMAGES" => "N",
+                            "SEF_MODE" => "N",
+                            "STATUS" => "ANY",
+                            "STATUS_NEW" => "N",
+                            "USER_MESSAGE_ADD" => "Спасибо, ваша заявка отправлена",
+                            "USER_MESSAGE_EDIT" => "",
+                            "USE_CAPTCHA" => "N"
+                        )
+                    );?>
                     <div class="form__contacts">
                         <div class="nav-popup__phone">
                             <div class="nav-popup__label">Отдел продаж</div>
@@ -173,7 +232,7 @@ $link = \Bitrix\Main\Config\Option::get("grain.customsettings", "modal_success_l
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

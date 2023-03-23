@@ -163,12 +163,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
             form.addEventListener('submit', e => {
                 e.preventDefault();
 
+                //let wait = BX.showWait($(form));
+
                 submitButtons.forEach(button => {
                     button.setAttribute('disabled', true);
                 });
 
                 const formData = new FormData(form);
                 const url = form.action;
+                let target = form.closest('.modal__container').getAttribute('data-target');
 
                 fetch(url, {
                     body: formData,
@@ -178,8 +181,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     .then(data => {
                         if (data.success) {
                             form.reset();
+                            //BX.closeWait(form, wait);
                             // alert(data.message);
-                            openPopup('success')
+                            if (target.length > 0){
+                                window.Spectechnika_Api.modal.close(target);
+                            }
+
+                            openPopup('success');
                         } else {
                             // alert(data.errors.join('\n'));
                             openPopup('error')
