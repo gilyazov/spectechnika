@@ -12,7 +12,7 @@ function ajaxFilter(myForm, data) {
             success: function(dataHtml){
 
                 $('#ajaxContainer').html(dataHtml);
-
+                window.Spectechnika_Api.onTabsConfFunct();
                 if (data.del_filter){
                     BX.ajax.history.put(null, ulr);
                 }
