@@ -20,9 +20,10 @@ if (!empty($arResult["ERRORS"])) {
 if ($arResult["MESSAGE"] <> '') {
     ShowNote($arResult["MESSAGE"]);
 }
+//CJSCore::Init(array("jquery3"));
 ?>
 
-<form class="form__controls js-form" name="iblock_add" action="<?=POST_FORM_ACTION_URI?>" method="post" enctype="multipart/form-data" id="form-section">
+<form class="form__controls js-form" name="iblock_add" action="<?=POST_FORM_ACTION_URI?>" method="post" enctype="multipart/form-data" id="iblock_submit_<?=$templateName?>_<?=$arParams["PREFIX"]?>">
     <?=bitrix_sessid_post()?>
     <input type="hidden" name="iblock_submit_<?=$templateName?>_<?=$arParams["PREFIX"]?>" value="Отправить" />
     <input type="hidden" name="PROPERTY[3][0]" value="<?=$_SERVER['SERVER_NAME'] . $APPLICATION->GetCurPage();?>">
@@ -32,7 +33,8 @@ if ($arResult["MESSAGE"] <> '') {
         <div class="form__inputs">
 
             <?php foreach ($arResult["PROPERTY_LIST"] as $propertyID):?>
-                <div class="form__input-wrapper">
+                <?php $code = $arResult["PROPERTY_LIST_FULL"][$propertyID]["CODE"];?>
+                <div class="form__input-wrapper<?php if($code == "PRODUCT"):?> form__input-wrapper--with-label<?php endif?>">
                     <?php
                     if (intval($propertyID) > 0)
                     {
@@ -105,15 +107,26 @@ if ($arResult["MESSAGE"] <> '') {
                                 ?>
 
                                 <?php if(in_array($propertyID, ARRAY_PROPERTY_ID_FIELDS_TYPE_NAME)):?>
-                                    <input class="form__input input" name="PROPERTY[<?=$propertyID?>][<?=$i?>]" value="<?=$value?>" type="text" placeholder="<?=$inputName?>" autocomplete="name" <?php if(in_array($propertyID, $arResult["PROPERTY_REQUIRED"])):?>required<?php endif?>>
+                                    <input class="form__input input<?php if($arParams["IS_DARK"]):?> input--dark<?php endif;?> js-input-mask_text" name="PROPERTY[<?=$propertyID?>][<?=$i?>]" value="<?=$value?>" type="text" placeholder="<?=$inputName?>" autocomplete="name" <?php if(in_array($propertyID, $arResult["PROPERTY_REQUIRED"])):?>required<?php endif?>>
                                 <?php elseif (in_array($propertyID, ARRAY_PROPERTY_ID_FIELDS_TYPE_PHONE)): ?>
-                                    <input class="form__input input js-input-mask_phone" name="PROPERTY[<?=$propertyID?>][<?=$i?>]" value="<?=$value?>" type="tel" placeholder="<?=$inputName?>" autocomplete="tel" <?php if(in_array($propertyID, $arResult["PROPERTY_REQUIRED"])):?>required<?php endif?>>
+                                    <input class="form__input input js-input-mask_phone<?php if($arParams["IS_DARK"]):?> input--dark<?php endif;?>" name="PROPERTY[<?=$propertyID?>][<?=$i?>]" value="<?=$value?>" type="tel" placeholder="<?=$inputName?>" autocomplete="tel" <?php if(in_array($propertyID, $arResult["PROPERTY_REQUIRED"])):?>required<?php endif?>>
                                 <?php elseif (in_array($propertyID, ARRAY_PROPERTY_ID_FIELDS_TYPE_TEXTAREA)): ?>
                                     <textarea class="form__input input" name="PROPERTY[<?=$propertyID?>][<?=$i?>]" placeholder="<?=$inputName?>" <?php if(in_array($propertyID, $arResult["PROPERTY_REQUIRED"])):?>required<?php endif?>><?=$value?></textarea>
                                 <?php elseif (in_array($propertyID, ARRAY_PROPERTY_ID_FIELDS_TYPE_EMAIL)): ?>
-                                    <input class="form__input input" name="PROPERTY[<?=$propertyID?>][<?=$i?>]" value="<?=$value?>" type="email" placeholder="<?=$inputName?>" autocomplete="email" <?php if(in_array($propertyID, $arResult["PROPERTY_REQUIRED"])):?>required<?php endif?>>
+                                    <input class="form__input input" name="PROPERTY[<?=$propertyID?>][<?=$i?>]" value="<?=$value?>"
+                                           type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$"
+                                           placeholder="<?=$inputName?>" autocomplete="email" <?php if(in_array($propertyID, $arResult["PROPERTY_REQUIRED"])):?>required<?php endif?>>
+                                <?php elseif($code == "PRODUCT"):?>
+                                    <label class="form__label"><?=$inputName?></label>
+                                    <input
+                                            class="form__input input<?php if($arParams["IS_DARK"]):?> input--dark<?php endif;?>"
+                                            name="PROPERTY[<?=$propertyID?>][<?=$i?>]" value="<?=$value?>"
+                                            type="text"
+                                            placeholder="КамАЗ 5490-022-87"
+                                            autocomplete="off"
+                                            <?php if(in_array($propertyID, $arResult["PROPERTY_REQUIRED"])):?>required<?php endif?>>
                                 <?php else: ?>
-                                    <input class="form__input input" name="PROPERTY[<?=$propertyID?>][<?=$i?>]" value="<?=$value?>" type="text" placeholder="<?=$inputName?>" autocomplete="on" <?php if(in_array($propertyID, $arResult["PROPERTY_REQUIRED"])):?>required<?php endif?>>
+                                    <input class="form__input input<?php if($arParams["IS_DARK"]):?> input--dark<?php endif;?>" name="PROPERTY[<?=$propertyID?>][<?=$i?>]" value="<?=$value?>" type="text" placeholder="<?=$inputName?>" autocomplete="on" <?php if(in_array($propertyID, $arResult["PROPERTY_REQUIRED"])):?>required<?php endif?>>
                                 <?php endif; ?>
                                 <?php
                             }
@@ -136,7 +149,9 @@ if ($arResult["MESSAGE"] <> '') {
     <?php endif?>
 
     <div class="form__submit">
-        <button class="button-primary button-primary--large button-primary--light js-form-submit" type="submit">Оставить заявку</button>
+        <button
+                class="button-primary button-primary--large<?php if(!$arParams["IS_DARK"]):?> button-primary--light<?endif;?> js-form-submit"
+                type="submit">Оставить заявку</button>
         <div class="form__submit-text">
             <span>Нажимая кнопку “Оставить заявку” вы соглашаетесь с&nbsp;</span>
             <a href="<?= CFile::GetPath(\Bitrix\Main\Config\Option::get( "askaron.settings", "UF_POLICY"));?>" download>политикой конфиденциальности</a>

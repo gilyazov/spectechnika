@@ -47,6 +47,7 @@ class CatalogSectionBlock extends \Bitrix\Landing\LandingBlock
         ));
         if ($arSection = $rsSection->fetch()) {
             $this->sectionID = $arSection["ID"];
+            $this->params['SECTION_ID'] = $arSection["ID"];
             $this->params['SECTION_NAME'] = $arSection["NAME"];
         }
     }

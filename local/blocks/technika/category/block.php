@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="cat-layout__container category__container">
-                                <?php $APPLICATION->IncludeComponent(
+                <?php $APPLICATION->IncludeComponent(
                     "bitrix:catalog.filter",
                     "category__sidebar",
                     Array(
@@ -88,6 +88,7 @@
                                 global $arrFilter;
                                 $arFilter = [
                                     "IBLOCK_ID" => 1,
+                                    "SECTION_ID" => $classBlock->get("SECTION_ID"),
                                     "ACTIVE" => "Y"
                                 ];
                                 $count = CIBlockElement::GetList(false, array_merge($arFilter, $arrFilter), array('IBLOCK_ID'))->Fetch()['CNT'];

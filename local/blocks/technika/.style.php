@@ -20,7 +20,7 @@ return [
             'items' => [
                 ['name' => 'Серый', 'value' => 'reviews--bg-grey'],
                 ['name' => 'Черный', 'value' => 'section--black'],
-                ['name' => 'Белый', 'value' => 'white-section']
+                ['name' => 'Белый', 'value' => 'section--white']
             ],
         ],
 	],

@@ -22,7 +22,7 @@
                 <div class="cat-layout__main js-swiper-entry">
                     <div class="cat-layout__head">
                         <div class="cat-layout__button-wrapper">
-                            <button class="ads__button ads__button _active button-text" data-value="catalog">Категории</button><span class="ads__counter" data-value="catalog-counter">20</span>
+                            <button class="ads__button ads__button _active button-text" data-value="catalog">Категории</button><span class="ads__counter" data-value="catalog-counter"><?=$classBlock->get('SECTION_COUNT')?></span>
                         </div>
                     </div>
                     <div class="cat-entry__list cat-entry__list--swiper">

@@ -31,10 +31,14 @@ $this->setFrameMode(true);
                         </div>
                     </div>
                     <div class="product-info__pricing">
-                        <div class="product-info__new-price h4-text"><?=$arResult["PROPERTIES"]["PRICE"]["VALUE"]?> ₽</div>
-                        <div class="product-info__old-price"><span class="product-info__old-price-value"><?=$arResult["PROPERTIES"]["OLD_PRICE"]["VALUE"]?> ₽</span>
-                            <div class="product-info__discount discount"><?=$arResult["PROPERTIES"]["DISCOUNT"]["VALUE"]?></div>
-                        </div>
+                        <?if($arResult["PROPERTIES"]["PRICE"]["VALUE"]):?>
+                            <div class="product-info__new-price h4-text"><?=$arResult["PROPERTIES"]["PRICE"]["VALUE"]?> ₽</div>
+                        <?endif;?>
+                        <?if($arResult["PROPERTIES"]["OLD_PRICE"]["VALUE"]):?>
+                            <div class="product-info__old-price"><span class="product-info__old-price-value"><?=$arResult["PROPERTIES"]["OLD_PRICE"]["VALUE"]?> ₽</span>
+                                <?if($arResult["PROPERTIES"]["DISCOUNT"]["VALUE"]):?><div class="product-info__discount discount"><?=$arResult["PROPERTIES"]["DISCOUNT"]["VALUE"]?></div><?endif;?>
+                            </div>
+                        <?endif;?>
                     </div>
                 </div>
             </div>
@@ -47,15 +51,15 @@ $this->setFrameMode(true);
                         <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#compare"></use>
                     </svg><span>сравнить</span>
                 </a>
-                <a class="product-card__order product-card__button button-primary" href="#">Заказать</a>
+                <a class="product-card__order product-card__button button-primary" data-path="product-request-modal" href="#">Заказать</a>
             </div>
         </div>
         <div class="product-card__spec spec">
             <div class="spec__controls">
-                <button class="spec__button spec__button--active primary-link spec__button--chassis" data-role="spec-chassis"><span class="link-text">Характеристики шасси</span>
+                <button class="spec__button spec__button--active primary-link spec__button--chassis" data-role="spec-chassis"><span class="link-text"><?=$arResult["PROPERTIES"]["CONTROL_1"]["VALUE"]?></span>
                 </button>
                 <?php if($arResult["PROPERTIES"]["CMU"]["VALUE"]):?>
-                    <button class="spec__button primary-link spec__button--crane" data-role="spec-crane"><span class="link-text">Характеристики КМУ</span>
+                    <button class="spec__button primary-link spec__button--crane" data-role="spec-crane"><span class="link-text"><?=$arResult["PROPERTIES"]["CONTROL_2"]["VALUE"]?></span>
                     </button>
                 <?endif;?>
             </div>
@@ -75,7 +79,7 @@ $this->setFrameMode(true);
                         <div class="spec__table-row">
                             <div class="spec__table-col"><span class="spec__key"><?=$arChassis["SUB_VALUES"]["CMU_T"]["VALUE"]?></span>
                             </div>
-                            <div class="spec__table-col"><span class="spec__value"><?=$arChassis["SUB_VALUES"]["CMU_T"]["VALUE"]?></span>
+                            <div class="spec__table-col"><span class="spec__value"><?=$arChassis["SUB_VALUES"]["CMU_V"]["VALUE"]?></span>
                             </div>
                         </div>
                     <?php endforeach;?>

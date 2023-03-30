@@ -10,6 +10,7 @@ return array(
 		'name' => 'Список категорий с новинками',
         'section' => ['Technika', 'catalog'],
 		'dynamic' => false,
+        'namespace' => 'technika'
 	),
 	'cards' => array(
 

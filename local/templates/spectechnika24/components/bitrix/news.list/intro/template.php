@@ -36,7 +36,9 @@ $this->setFrameMode(true);
                             <div class="main-slide__slogan"><?=$arItem["PROPERTIES"]["SLOGAN"]["~VALUE"]["TEXT"]?></div>
                         </div>
                         <?
-                        $a = new SimpleXMLElement($arItem["DISPLAY_PROPERTIES"]["CATALOG"]["DISPLAY_VALUE"]);
+                        if ($arItem["PROPERTIES"]["CATALOG"]["VALUE"]){
+                            $a = new SimpleXMLElement($arItem["DISPLAY_PROPERTIES"]["CATALOG"]["DISPLAY_VALUE"]);
+                        }
                         ?>
                         <a class="main-slide__link" href="<?=$a['href']?>">
                             <div class="main-slide__info">

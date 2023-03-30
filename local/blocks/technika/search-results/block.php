@@ -45,7 +45,7 @@ global $arrFilter;
                         <div class="control-panel__filter-button">
                             <button class="button-filter"><span>Фильтры</span>
                                 <svg class="icon icon-gear">
-                                    <use xlink:href="assets/images/sprites/sprite-multi.svg#gear"></use>
+                                    <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-multi.svg#gear"></use>
                                 </svg>
                             </button>
                         </div>
@@ -55,7 +55,7 @@ global $arrFilter;
                                     <div class="sorting__text" data-value="Сначала популярные">Сначала популярные</div>
                                     <div class="sorting__icon">
                                         <svg class="icon icon-sort">
-                                            <use xlink:href="assets/images/sprites/sprite-multi.svg#sort"></use>
+                                            <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-multi.svg#sort"></use>
                                         </svg>
                                     </div>
                                 </button>
@@ -95,12 +95,12 @@ global $arrFilter;
                             <div class="view-type__body">
                                 <label class="view-type__button view-type__button--bullets" for="view-type-list">
                                     <svg class="icon icon-bullet-list-text">
-                                        <use xlink:href="assets/images/sprites/sprite-multi.svg#bullet-list-text"></use>
+                                        <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-multi.svg#bullet-list-text"></use>
                                     </svg>
                                 </label>
                                 <label class="view-type__button view-type__button--grid" for="view-type-grid">
                                     <svg class="icon icon-grid-list">
-                                        <use xlink:href="assets/images/sprites/sprite-multi.svg#grid-list"></use>
+                                        <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-multi.svg#grid-list"></use>
                                     </svg>
                                 </label>
                             </div>

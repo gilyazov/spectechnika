@@ -163,7 +163,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
             form.addEventListener('submit', e => {
                 e.preventDefault();
 
-                //let wait = BX.showWait($(form));
+                let modal = form.closest('.modal');
+                let target;
+                if (modal){
+                    modal.classList.add('modal-loading');
+                    target = form.closest('.modal__container').getAttribute('data-target');
+                }
 
                 submitButtons.forEach(button => {
                     button.setAttribute('disabled', true);
@@ -171,7 +176,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
                 const formData = new FormData(form);
                 const url = form.action;
-                let target = form.closest('.modal__container').getAttribute('data-target');
 
                 fetch(url, {
                     body: formData,
@@ -183,7 +187,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             form.reset();
                             //BX.closeWait(form, wait);
                             // alert(data.message);
-                            if (target.length > 0){
+                            if (target){
+                                modal.classList.remove('modal-loading')
                                 window.Spectechnika_Api.modal.close(target);
                             }
 
