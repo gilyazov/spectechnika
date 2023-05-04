@@ -28,12 +28,12 @@ $this->setFrameMode(true);
                         </div>
                         <div class="slider-layout__controls">
                             <div class="button-slider-wrapper">
-                                <button class="button-slider button-slider--dark button-slider--left offers__button reviews__button--prev" type="button">
+                                <button class="button-slider button-slider--left offers__button reviews__button--prev" type="button">
                                     <svg class="icon icon-v-arrow-l">
                                         <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#v-arrow-l"></use>
                                     </svg>
                                 </button>
-                                <button class="button-slider button-slider--dark button-slider--rigth offers__button reviews__button--next" type="button">
+                                <button class="button-slider button-slider--rigth offers__button reviews__button--next" type="button">
                                     <svg class="icon icon-v-arrow-r">
                                         <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#v-arrow-r"></use>
                                     </svg>

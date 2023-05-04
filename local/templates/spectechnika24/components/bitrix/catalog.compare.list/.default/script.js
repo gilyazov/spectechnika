@@ -71,11 +71,14 @@ window.JCCatalogCompareList.prototype.deleteCompare = function()
 		{
 			BX.showWait(this.obCompare);
 			url = this.ajax.url + this.ajax.templates.delete + itemID.toString();
+			// console.log(url, this.ajax.url, this.ajax.templates.delete, itemID.toString())
 			BX.ajax.loadJSON(
 				url,
 				this.ajax.params,
 				BX.proxy(this.deleteCompareResult, this)
 			);
+
+			window.location = this.ajax.url;
 		}
 	}
 };

@@ -11,11 +11,12 @@ foreach ($arResult["ITEMS"] as $key => &$arItem){
     }
     elseif($arItem["TYPE"] == "SELECT"){
         foreach ($arItem['LIST'] as $id => $name){
+//            $id = ($id == 0 ? "" : $id);
             /*$name = ($id ? $name : 'Выберите страну');*/
             $options .= '
                 <div class="select__value">
                     <input class="select__input" type="radio" id="'.$key.'_'.$id.'" 
-                        value="'.$id.'" 
+                        value="'.($id == 0 ? "" : $id).'" 
                         '.($arItem['INPUT_VALUE'] == $id ? ' checked="checked"' : '').'
                         name="'.$arItem['INPUT_NAME'].'">
                     <p class="select__input-text">'.$name.'</p>

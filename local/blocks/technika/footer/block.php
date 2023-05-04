@@ -79,7 +79,7 @@
             <div class="footer__row">
                 <div class="footer__col footer__col--small footer__col--second">
                     <div class="footer__policy policy">
-                        <div class="policy__text">© 2017–2022 Все&nbsp;права&nbsp;защищены</div>
+                        <div class="policy__text">© 2017–<?=date("Y")?> Все&nbsp;права&nbsp;защищены</div>
                         <a class="policy__link primary-link" href="/"><span class="link-text">Правовая информация</span>
                         </a>
                     </div>
@@ -101,7 +101,7 @@
                     </form>
                 </div>
                 <div class="footer__col footer__col--small">
-                    <a class="footer__dev dev" href="#"><span class="dev__span">Сайт разработан</span>
+                    <a class="footer__dev dev" href="https://markweber.agency" target="_blank" rel="nofollow"><span class="dev__span">Сайт разработан</span>
                         <svg class="icon icon-dev-logo">
                             <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-multi.svg#dev-logo"></use>
                         </svg>

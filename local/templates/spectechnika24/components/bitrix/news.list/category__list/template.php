@@ -14,24 +14,30 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $this->setFrameMode(true);
 ?>
 <?php if($arResult["ITEMS"]):?>
-    <ul class="category__list category__list--wrap">
+    <ul class="category__list category__list--wrap news-list">
         <?php foreach ($arResult["ITEMS"] as $arItem): ?>
             <li class="category__item">
                 <div class="category__card card">
                     <div class="card__body">
-                        <?if($arItem["PREVIEW_PICTURE"]["ID"]):?>
-                            <div class="card__image">
-                                <picture>
+
+                        <div class="card__image">
+                            <picture>
+                                <?if($arItem["PREVIEW_PICTURE"]["ID"]):?>
                                     <source type="image/webp"
-                                            data-srcset="<?=\Technika\Core\Tools::resizeImage($arItem["PREVIEW_PICTURE"]["ID"], 385, 280, true)?>"
-                                            alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>"
-                                            srcset="<?=\Technika\Core\Tools::resizeImage($arItem["PREVIEW_PICTURE"]["ID"], 385, 280, true)?>">
+                                        data-srcset="<?=\Technika\Core\Tools::resizeImage($arItem["PREVIEW_PICTURE"]["ID"], 385, 280, true)?>"
+                                        alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>"
+                                        srcset="<?=\Technika\Core\Tools::resizeImage($arItem["PREVIEW_PICTURE"]["ID"], 385, 280, true)?>">
                                     <img class="lazy"
                                          data-src="<?=\Technika\Core\Tools::resizeImage($arItem["PREVIEW_PICTURE"]["ID"], 385, 280, true)?>"
                                          src="#" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>">
-                                </picture>
-                            </div>
-                        <?endif;?>
+                                <?else:?>
+                                    <img class="lazy"
+                                         data-src="<?=SITE_TEMPLATE_PATH?>/assets/img/blank.png"
+                                         src="#" alt="<?= $arItem["NAME"] ?>">
+                                <?endif;?>
+                            </picture>
+                        </div>
+
                         <div class="card__info">
                             <div class="card__heading">
                                 <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="card__title"><?= $arItem["~NAME"] ?></a>
@@ -54,8 +60,8 @@ $this->setFrameMode(true);
                             </div>
                             <div class="card__bottom">
                                 <div class="card__price"><?if ($arItem["PROPERTIES"]["PRICE"]["VALUE"]):?><span><?=$arItem["PROPERTIES"]["PRICE"]["VALUE"]?> ₽</span><?endif;?>
-                                    <div class="card__old-price product-info__old-price"><span class="product-info__old-price-value"><?=$arItem["PROPERTIES"]["OLD_PRICE"]["VALUE"]?> ₽</span>
-                                        <div class="product-info__discount discount">–20%</div>
+                                    <div class="card__old-price product-info__old-price"><?if ($arItem["PROPERTIES"]["OLD_PRICE"]["VALUE"]):?><span class="product-info__old-price-value"><?=$arItem["PROPERTIES"]["OLD_PRICE"]["VALUE"]?> ₽</span><?endif;?>
+                                        <?if($arItem["PROPERTIES"]["DISCOUNT"]["VALUE"]):?><div class="product-info__discount discount"><?=$arItem["PROPERTIES"]["DISCOUNT"]["VALUE"]?></div><?endif;?>
                                     </div>
                                 </div>
                                 <div class="card__controls">
@@ -76,4 +82,10 @@ $this->setFrameMode(true);
             </li>
         <?php endforeach; ?>
     </ul>
+
+    <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
+        <?=$arResult["NAV_STRING"]?>
+    <?endif;?>
+<?php else:?>
+    На данный момент по вашему запросу нет подходящей техники
 <?php endif;?>

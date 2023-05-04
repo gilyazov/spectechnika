@@ -19,9 +19,10 @@ $this->setFrameMode(true);
             <div class="ads__item swiper-slide">
                 <div class="card">
                     <div class="card__body">
-                        <?if($arItem["PREVIEW_PICTURE"]["ID"]):?>
-                            <div class="card__image">
-                                <picture>
+
+                        <div class="card__image">
+                            <picture>
+                                <?if($arItem["PREVIEW_PICTURE"]["ID"]):?>
                                     <source type="image/webp"
                                             data-srcset="<?=\Technika\Core\Tools::resizeImage($arItem["PREVIEW_PICTURE"]["ID"], 385, 280, true)?>"
                                             alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>"
@@ -29,9 +30,14 @@ $this->setFrameMode(true);
                                     <img class="lazy"
                                          data-src="<?=\Technika\Core\Tools::resizeImage($arItem["PREVIEW_PICTURE"]["ID"], 385, 280, true)?>"
                                          src="#" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>">
-                                </picture>
-                            </div>
-                        <?endif;?>
+                                <?else:?>
+                                    <img class="lazy"
+                                         data-src="<?=SITE_TEMPLATE_PATH?>/assets/img/blank.png"
+                                         src="#" alt="<?= $arItem["NAME"] ?>">
+                                <?endif;?>
+                            </picture>
+                        </div>
+
                         <div class="card__info">
                             <div class="card__heading">
                                 <h5 class="card__title"><?= $arItem["~NAME"] ?></h5>
@@ -45,7 +51,11 @@ $this->setFrameMode(true);
                                 </ul>
                             </div>
                             <div class="card__bottom">
-                                <div class="card__price"><span><?=$arResult["PROPERTIES"]["PRICE"]["VALUE"]?> ₽</span>
+                                <div class="card__price">
+                                    <?if ($arItem["PROPERTIES"]["PRICE"]["VALUE"]):?><span><?=$arItem["PROPERTIES"]["PRICE"]["VALUE"]?> ₽</span><?endif;?>
+                                    <div class="card__old-price product-info__old-price"><?if ($arItem["PROPERTIES"]["OLD_PRICE"]["VALUE"]):?><span class="product-info__old-price-value"><?=$arItem["PROPERTIES"]["OLD_PRICE"]["VALUE"]?> ₽</span><?endif;?>
+                                        <?if($arItem["PROPERTIES"]["DISCOUNT"]["VALUE"]):?><div class="product-info__discount discount"><?=$arItem["PROPERTIES"]["DISCOUNT"]["VALUE"]?></div><?endif;?>
+                                    </div>
                                 </div>
                                 <div class="card__controls">
                                     <button class="button-primary button-primary--medium" data-path="product-request-modal" type="button">Заказать</button>

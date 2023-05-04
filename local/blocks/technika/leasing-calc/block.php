@@ -14,7 +14,7 @@
                             <div class="range__wrapper">
                                 <div class="range__label">Стоимость</div>
                                 <div class="range__input-wrapper">
-                                    <input class="range__input styled-slider slider-progress" type="range" required="required" name="cost" id="costInput" min="100000" max="3500000" value="3500000">
+                                    <input class="range__input styled-slider slider-progress" type="range" step="10000" required="required" name="cost" id="costInput" min="100000" max="3500000" value="3500000">
                                 </div>
                                 <div class="range__values">
                                     <div class="range__input-value">
@@ -29,13 +29,13 @@
                             <div class="range__wrapper">
                                 <div class="range__label">Аванс</div>
                                 <div class="range__input-wrapper">
-                                    <input class="range__input styled-slider slider-progress" type="range" required="required" name="prepayment" id="prepaymentInput" min="10000" max="3500000" value="3500000">
+                                    <input class="range__input styled-slider slider-progress" type="range" step="10000" required="required" name="prepayment" id="prepaymentInput" min="10000" max="350000" value="3500000">
                                 </div>
                                 <div class="range__values">
                                     <div class="range__input-value">
-                                        <output for="prepayment" id="prepaymentOutput">3 500 000</output><span>&nbsp;</span><span class="range__span-currency">₽</span>
+                                        <output for="prepayment" id="prepaymentOutput">350 00</output><span>&nbsp;</span><span class="range__span-currency">₽</span>
                                     </div>
-                                    <div class="range__input-percentege"><span class="range__percentege-value">100</span><span>&nbsp;</span><span class="range__percentege-currency">&#x25;</span>
+                                    <div class="range__input-percentege"><span class="range__percentege-value">10</span><span>&nbsp;</span><span class="range__percentege-currency">&#x25;</span>
                                     </div>
                                 </div>
                             </div>
@@ -46,11 +46,11 @@
                             <div class="range__wrapper">
                                 <div class="range__label">Срок</div>
                                 <div class="range__input-wrapper">
-                                    <input class="range__input styled-slider slider-progress" type="range" required="required" name="term" id="termInput" min="12" max="36" value="36">
+                                    <input class="range__input styled-slider slider-progress" type="range" required="required" name="term" id="termInput" min="12" max="36" value="24">
                                 </div>
                                 <div class="range__values">
                                     <div class="range__input-value">
-                                        <output for="term" id="termOutput">36</output><span>&nbsp;</span><span class="range__span-currency">мес</span>
+                                        <output for="term" id="termOutput">24</output><span>&nbsp;</span><span class="range__span-currency">мес</span>
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="submit-calc__bottom">
-                        <button class="submit-calc__button button-primary button-primary--black button-primary--large" type="submit">Получить расчет</button>
+                        <button class="submit-calc__button button-primary button-primary--black button-primary--large" data-path="leasing-request-modal" type="submit">Получить расчет</button>
                         <div class="submit-calc__footnote">* Данный расчет примерный, точную информацию о лизинге узнавайте у консультантов</div>
                     </div>
                 </div>

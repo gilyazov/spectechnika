@@ -55,9 +55,9 @@ $this->setFrameMode(true);
                                 </ul>
                             </div>
                             <div class="card__bottom">
-                                <div class="card__price"><span><?=$arResult["PROPERTIES"]["PRICE"]["VALUE"]?> ₽</span>
-                                    <div class="card__old-price product-info__old-price"><span class="product-info__old-price-value">от 5 500 000 ₽</span>
-                                        <div class="product-info__discount discount">–20%</div>
+                                <div class="card__price"><?if ($arItem["PROPERTIES"]["PRICE"]["VALUE"]):?><span><?=$arItem["PROPERTIES"]["PRICE"]["VALUE"]?> ₽</span><?endif;?>
+                                    <div class="card__old-price product-info__old-price"><?if ($arItem["PROPERTIES"]["OLD_PRICE"]["VALUE"]):?><span class="product-info__old-price-value"><?=$arItem["PROPERTIES"]["OLD_PRICE"]["VALUE"]?> ₽</span><?endif;?>
+                                        <?if($arItem["PROPERTIES"]["DISCOUNT"]["VALUE"]):?><div class="product-info__discount discount"><?=$arItem["PROPERTIES"]["DISCOUNT"]["VALUE"]?></div><?endif;?>
                                     </div>
                                 </div>
                                 <div class="card__controls">

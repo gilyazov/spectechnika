@@ -1,105 +1,179 @@
 .landing-edit-mode,
 .landing-public-mode {
-	-webkit-box-flex: 1;
-	-ms-flex: 1 0 auto;
-	flex: 1 0 auto;
-	display: flex;
-	flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .landing-layout-flex {
-	display: flex;
-	flex-wrap: nowrap;
-	flex-direction: column;
-	flex-grow: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .landing-header + .landing-main {
-	flex-grow: 1;
+    flex-grow: 1;
 }
 
 @media (min-width: 1px) {
-	.landing-layout-breakpoint--all .landing-layout-flex {
-		flex-direction: row;
-	}
+    .landing-layout-breakpoint--all .landing-layout-flex {
+        flex-direction: row;
+    }
 
-	.landing-layout-breakpoint--all .landing-layout-flex.sidebar-right,
-	.landing-layout-breakpoint--all .landing-layout-flex.without-left {
-		flex-direction: row-reverse;
-	}
+    .landing-layout-breakpoint--all .landing-layout-flex.sidebar-right,
+    .landing-layout-breakpoint--all .landing-layout-flex.without-left {
+        flex-direction: row-reverse;
+    }
 
-	.landing-layout-breakpoint--all .landing-layout-flex .landing-sidebar {
-		width: 30%;
-	}
+    .landing-layout-breakpoint--all .landing-layout-flex .landing-sidebar {
+        width: 30%;
+    }
 
-	.landing-layout-breakpoint--all .landing-layout-flex .landing-main {
-		width: 70%;
-	}
+    .landing-layout-breakpoint--all .landing-layout-flex .landing-main {
+        width: 70%;
+    }
 }
 
 @media (min-width: 576px) {
 
-	.landing-layout-breakpoint--mobile .landing-layout-flex {
-		flex-direction: row;
-	}
+    .landing-layout-breakpoint--mobile .landing-layout-flex {
+        flex-direction: row;
+    }
 
-	.landing-layout-breakpoint--mobile .landing-layout-flex.sidebar-right,
-	.landing-layout-breakpoint--mobile .landing-layout-flex.without-left {
-		flex-direction: row-reverse;
-	}
+    .landing-layout-breakpoint--mobile .landing-layout-flex.sidebar-right,
+    .landing-layout-breakpoint--mobile .landing-layout-flex.without-left {
+        flex-direction: row-reverse;
+    }
 
-	.landing-layout-breakpoint--mobile .landing-layout-flex .landing-sidebar {
-		width: 30%;
-	}
+    .landing-layout-breakpoint--mobile .landing-layout-flex .landing-sidebar {
+        width: 30%;
+    }
 
-	.landing-layout-breakpoint--mobile .landing-layout-flex .landing-main {
-		width: 70%;
-	}
+    .landing-layout-breakpoint--mobile .landing-layout-flex .landing-main {
+        width: 70%;
+    }
 }
 
 @media (min-width: 768px) {
-	/*default*/
-	main:not([class*="landing-layout-breakpoint"]) .landing-layout-flex,
-	.landing-layout-breakpoint--tablet .landing-layout-flex {
-		flex-direction: row;
-	}
+    /*default*/
+    main:not([class*="landing-layout-breakpoint"]) .landing-layout-flex,
+    .landing-layout-breakpoint--tablet .landing-layout-flex {
+        flex-direction: row;
+    }
 
-	main:not([class*="landing-layout-breakpoint"]) .landing-layout-flex.sidebar-right,
-	main:not([class*="landing-layout-breakpoint"]) .landing-layout-flex.without-left,
-	.landing-layout-breakpoint--tablet .landing-layout-flex.sidebar-right,
-	.landing-layout-breakpoint--tablet .landing-layout-flex.without-left {
-		flex-direction: row-reverse;
-	}
+    main:not([class*="landing-layout-breakpoint"]) .landing-layout-flex.sidebar-right,
+    main:not([class*="landing-layout-breakpoint"]) .landing-layout-flex.without-left,
+    .landing-layout-breakpoint--tablet .landing-layout-flex.sidebar-right,
+    .landing-layout-breakpoint--tablet .landing-layout-flex.without-left {
+        flex-direction: row-reverse;
+    }
 
-	main:not([class*="landing-layout-breakpoint"]) .landing-layout-flex .landing-sidebar,
-	.landing-layout-breakpoint--tablet .landing-layout-flex .landing-sidebar {
-		width: 30%;
-	}
+    main:not([class*="landing-layout-breakpoint"]) .landing-layout-flex .landing-sidebar,
+    .landing-layout-breakpoint--tablet .landing-layout-flex .landing-sidebar {
+        width: 30%;
+    }
 
-	main:not([class*="landing-layout-breakpoint"]) .landing-layout-flex .landing-main,
-	.landing-layout-breakpoint--tablet .landing-layout-flex .landing-main {
-		width: 70%;
-	}
+    main:not([class*="landing-layout-breakpoint"]) .landing-layout-flex .landing-main,
+    .landing-layout-breakpoint--tablet .landing-layout-flex .landing-main {
+        width: 70%;
+    }
 }
 
 @media (min-width: 992px) {
 
-	.landing-layout-breakpoint--desktop .landing-layout-flex {
-		flex-direction: row;
-	}
+    .landing-layout-breakpoint--desktop .landing-layout-flex {
+        flex-direction: row;
+    }
 
-	.landing-layout-breakpoint--desktop .landing-layout-flex.sidebar-right,
-	.landing-layout-breakpoint--desktop .landing-layout-flex.without-left {
-		flex-direction: row-reverse;
-	}
+    .landing-layout-breakpoint--desktop .landing-layout-flex.sidebar-right,
+    .landing-layout-breakpoint--desktop .landing-layout-flex.without-left {
+        flex-direction: row-reverse;
+    }
 
-	/*for all*/
-	.landing-layout-flex .landing-sidebar {
-		width: 300px;
-		min-width: 300px; /* 30% * 992px */
-	}
+    /*for all*/
+    .landing-layout-flex .landing-sidebar {
+        width: 300px;
+        min-width: 300px; /* 30% * 992px */
+    }
 
-	.landing-layout-flex .landing-main {
-		width: calc(100% - 300px);
-	}
+    .landing-layout-flex .landing-main {
+        width: calc(100% - 300px);
+    }
+}
+
+/* Loader */
+
+.js-ajax-container {
+    transition: opacity 0.3s ease;
+}
+
+.js-ajax-container.js-loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@keyframes backgroundMovement {
+    0% {
+        background-position: 100%
+    }
+    100% {
+        background-position: -100%
+    }
+}
+
+.loader {
+    display: none !important;
+}
+
+.loader.active {
+    display: grid !important;
+}
+
+.loader__item {
+    height: 40rem;
+
+    border-radius: 1.6rem;
+
+    background: linear-gradient(267.58deg, var(--color-grey-300) 0, var(--color-grey-600) 80%, var(--color-grey-300) 100%);
+
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: backgroundMovement;
+    animation-timing-function: linear;
+}
+
+/* Ajax show more */
+
+.js-ajax-show-more-btn.hidden {
+    display: none;
+}
+
+.js-ajax-elements-container.loading {
+    opacity: 0.8;
+}
+
+.js-ajax-elements-container {
+    transition: opacity 0.3s linear;
+}
+
+.js-ajax-show-more-btn.hidden {
+    display: none;
+}
+
+.js-ajax-show-more-btn.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.8;
+    transition: background-color .2s,
+    color .2s,
+    border-color .2s,
+    opacity .2s;
+}
+
+.mix-blend-mode--darken {
+    mix-blend-mode: darken;
 }

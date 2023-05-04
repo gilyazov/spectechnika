@@ -20,14 +20,15 @@ if ($arParams['POSITION_FIXED'] == 'Y')
 {
 	$mainClass .= ' fix '.($arParams['POSITION'][0] == 'bottom' ? 'bottom' : 'top').' '.($arParams['POSITION'][1] == 'right' ? 'right' : 'left');
 }
-$style = ($itemCount == 0 ? ' style="display: none;"' : '');
-?><div id="<?=$idCompareCount; ?>" class="<?=$mainClass; ?> "<?=$style; ?>><?
+
+?><div id="<?=$idCompareCount; ?>" class="<?=$mainClass; ?> "><?
 unset($style, $mainClass);
 if ($needReload)
 {
 	$APPLICATION->RestartBuffer();
 }
 $frame = $this->createFrame($idCompareCount)->begin('');
+
 if ($itemCount > 0)
 {
 	?>
@@ -50,13 +51,19 @@ if ($itemCount > 0)
                                 <div class="card__body">
                                     <div class="card__image">
                                         <picture>
-                                            <source type="image/webp"
-                                                    data-srcset="<?=Tools::resizeImage($arElement["FIELDS"]["PREVIEW_PICTURE"], 385, 280, true)?>"
-                                                    alt="<?= $arElement["NAME"] ?>"
-                                                    srcset="<?=Tools::resizeImage($arElement["FIELDS"]["PREVIEW_PICTURE"], 385, 280, true)?>">
-                                            <img class="lazy"
-                                                 data-src="<?=Tools::resizeImage($arElement["FIELDS"]["PREVIEW_PICTURE"], 385, 280, true)?>"
-                                                 src="#" alt="<?= $arElement["NAME"] ?>">
+                                            <?if($arElement["FIELDS"]["PREVIEW_PICTURE"]):?>
+                                                <source type="image/webp"
+                                                        data-srcset="<?=Tools::resizeImage($arElement["FIELDS"]["PREVIEW_PICTURE"], 385, 280, true)?>"
+                                                        alt="<?= $arElement["NAME"] ?>"
+                                                        srcset="<?=Tools::resizeImage($arElement["FIELDS"]["PREVIEW_PICTURE"], 385, 280, true)?>">
+                                                <img class="lazy"
+                                                     data-src="<?=Tools::resizeImage($arElement["FIELDS"]["PREVIEW_PICTURE"], 385, 280, true)?>"
+                                                     src="#" alt="<?= $arElement["NAME"] ?>">
+                                            <?else:?>
+                                                <img class="lazy"
+                                                     data-src="<?=SITE_TEMPLATE_PATH?>/assets/img/blank.png"
+                                                     src="#" alt="<?= $arElement["NAME"] ?>">
+                                            <?endif;?>
                                         </picture>
                                     </div>
                                     <div class="card__info">
@@ -64,8 +71,10 @@ if ($itemCount > 0)
                                             <h5 class="card__title"><?=$arElement["NAME"]?></h5>
                                         </div>
                                         <div class="card__bottom">
-                                            <div class="card__price"><span><?=$arElement["FIELDS"]["PROPERTY_PRICE_VALUE"]?> ₽</span>
-                                            </div>
+                                            <?if($arElement["FIELDS"]["PROPERTY_PRICE_VALUE"]):?>
+                                                <div class="card__price"><span><?=$arElement["FIELDS"]["PROPERTY_PRICE_VALUE"]?> ₽</span>
+                                                </div>
+                                            <?endif;?>
                                             <div class="card__controls">
                                                 <a href="<?=$arElement["DETAIL_PAGE_URL"]?>" class="button-primary button-primary--medium">Подробнее</a>
                                                 <noindex>
@@ -104,7 +113,7 @@ if ($itemCount > 0)
             <div class="accordion js-accordion active">
                 <button class="accordion__head js-accordion-btn" type="button"><span class="accordion__head-text">Основные параметры</span>
                     <svg class="icon icon-arrow-down accordion__head-icon" width="10px" height="6px">
-                        <use xlink:href="assets/images/sprites/sprite-mono.svg#arrow-down"></use>
+                        <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#arrow-down"></use>
                     </svg>
                 </button>
                 <div class="accordion__body js-accordion-content">
@@ -151,7 +160,7 @@ if ($itemCount > 0)
             <div class="accordion js-accordion active">
                 <button class="accordion__head js-accordion-btn" type="button"><span class="accordion__head-text">Характеристики</span>
                     <svg class="icon icon-arrow-down accordion__head-icon" width="10px" height="6px">
-                        <use xlink:href="assets/images/sprites/sprite-mono.svg#arrow-down"></use>
+                        <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#arrow-down"></use>
                     </svg>
                 </button>
                 <div class="accordion__body js-accordion-content">
@@ -174,6 +183,14 @@ if ($itemCount > 0)
         </li>
     </ul>
 <?
+}
+else{
+    ?>
+    <div class="comparison__catalog">
+        <div class="comparison__catalog-text">Добавьте технику для сравнения</div>
+        <a class="button-primary" href="/catalog/" type="button">Каталог</a>
+    </div>
+    <?
 }
 $frame->end();
 if ($needReload)

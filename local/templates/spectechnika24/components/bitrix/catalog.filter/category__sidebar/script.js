@@ -13,6 +13,9 @@ function ajaxFilter(myForm, data) {
 
                 $('#ajaxContainer').html(dataHtml);
 
+                window.Spectechnika_Api.categoryControlPanel();
+                window.Spectechnika_Api.openAndClearMobileFillter();
+                
                 if (data.del_filter){
                     BX.ajax.history.put(null, ulr);
                 }

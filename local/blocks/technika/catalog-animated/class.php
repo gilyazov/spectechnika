@@ -12,11 +12,23 @@ class CatalogAnimatedBlock extends \Bitrix\Landing\LandingBlock
 {
     public function init(array $params = [])
     {
-        $arFilter = Array(
+        $sectionFilter = Array(
             "IBLOCK_ID"=> 1,
             "ACTIVE" => "Y"
         );
+        $elementFilter["ACTIVE"] = "Y";
+        $elementFilter["ACTIVE_DATE"] = "Y";
+        $elementFilter["AVAILABLE"] = "Y";
 
-        $this->params['SECTION_COUNT'] = \CIBlockSection::GetCount($arFilter);
+        $rsSections = \CIBlockSection::GetList([], $sectionFilter, false, ["ID"]);
+        while($arSection = $rsSections->GetNext()){
+            $elementFilter["SECTION_ID"] = $arSection["ID"];
+            $elementCnt = \CIBlockElement::GetList(array(), $elementFilter, array());
+            if ($elementCnt > 0){
+                $arResult["SECTIONS"][] = $arSection;
+            }
+        }
+
+        $this->params['SECTION_COUNT'] = count($arResult["SECTIONS"]);
     }
 }

@@ -2,7 +2,7 @@
 include ("constants.php");
 include ("events.php");
 
-define ("BUILD_PATH", '/local/js/template/build/');
+define ("BUILD_PATH", '/local/js/build/spectechnika/');
 define ("DEFAULT_PATH", $_SERVER['DOCUMENT_ROOT'] . '/local/templates/.default/');
 define ("LANDING_DEVELOPER_MODE", true);
 

@@ -162,6 +162,7 @@ CJSCore::Init(array("jquery3"));
                     "PROPERTY_LOAD_CAPACITY" => $_REQUEST['carrying'],
                     "PROPERTY_BODY_VOLUME" => $_REQUEST['volume'],
                 ];
+//                pre($arrFilter);
 
                 $APPLICATION->IncludeComponent(
                     "bitrix:news.list",

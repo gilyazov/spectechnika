@@ -12,7 +12,7 @@ function ajaxFilter(myForm, data) {
             success: function(dataHtml){
 
                 $('#ajaxContainer').html(dataHtml);
-                window.Spectechnika_Api.onTabsConfFunct();
+
                 if (data.del_filter){
                     BX.ajax.history.put(null, ulr);
                 }
@@ -45,8 +45,12 @@ BX.ready(function(){
             cache: false,
             dataType: "html",
             success: function(dataHtml){
-
+                window.scrollTo({
+                    top: btn.offsetTop - 100,
+                    behavior: 'smooth'
+                });
                 $('#ajaxContainer').html(dataHtml);
+                window.Spectechnika_Api.onTabsConfFunct();
                 BX.closeWait(btn, wait);
             }
         });

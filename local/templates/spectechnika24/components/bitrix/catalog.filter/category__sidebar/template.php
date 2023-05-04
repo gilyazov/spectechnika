@@ -25,7 +25,7 @@ $this->setFrameMode(true);
                 <div class="filters__body">
                     <div class="filters__head">
                         <div class="filters__head-title">Фильтры</div>
-                        <button class="filters__clear-button">Очистить</button>
+                        <a href="<?echo $APPLICATION->GetCurDir()?>" class="filters__clear-button">Очистить</a>
                     </div>
                     <div class="filters__selections">
                         <?foreach($arResult["ITEMS"] as $arItem):?>
@@ -66,11 +66,11 @@ $this->setFrameMode(true);
                 <input type="hidden" name="set_filter" value="Y" />
                 <!--<input type="submit" name="del_filter" value="<?php /*=GetMessage("IBLOCK_DEL_FILTER")*/?>" />-->
 
-                <button class="filters__close-btn">
+                <div class="filters__close-btn">
                     <svg class="icon icon-close">
                         <use xlink:href="<?=BUILD_PATH?>assets/images/sprites/sprite-mono.svg#close"></use>
                     </svg>
-                </button>
+                </div>
             </div>
         </div>
     </div>

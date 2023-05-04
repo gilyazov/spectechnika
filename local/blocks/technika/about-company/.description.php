@@ -13,12 +13,12 @@ return array(
 		'dynamic' => false,
 	),
 	'cards' => array(
-        '.breadcrumbs__item' => [
+        /*'.breadcrumbs__item' => [
             'name' => 'Хлебные крошки',
             'label' => [
                 '.breadcrumbs__link'
             ]
-        ]
+        ]*/
 	),
 	'nodes' => array(
         '.about-company__title' => [
@@ -26,10 +26,10 @@ return array(
             'type' => 'text'
         ],
 
-        '.breadcrumbs__link' => [
+        /*'.breadcrumbs__link' => [
             'name' => 'Ссылка',
             'type' => 'link'
-        ]
+        ]*/
 	),
     'style' => array(
 

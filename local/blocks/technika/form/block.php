@@ -2,6 +2,7 @@
 
 <section class="form">
     <div class="site-container">
+        <div class="form__loading"></div>
         <div class="form__body">
             <div class="form__heading">
                 <h3 class="form__title h3-text">Оставьте&nbsp;заявку и получите&nbsp;подарок!</h3>

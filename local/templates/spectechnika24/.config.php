@@ -17,11 +17,11 @@ foreach ($jsConfig as $code => $ext)
 return [
     'js_core_public' => [
         'landing_core',
-        'template.build'
+        'build.spectechnika'
     ],
     'js_core_edit' => [
         'landing_core_admin',
-        'template.build'
+        'build.spectechnika'
     ],
     'disable_namespace' => [],
     'enable_namespace' => ['technika'],

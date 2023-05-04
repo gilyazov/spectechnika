@@ -164,10 +164,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 e.preventDefault();
 
                 let modal = form.closest('.modal');
+                let formSection = form.closest('.form');
                 let target;
+                let loading;
                 if (modal){
                     modal.classList.add('modal-loading');
                     target = form.closest('.modal__container').getAttribute('data-target');
+                }
+                if (formSection){
+                    loading = formSection.querySelector('.form__loading');
+                    loading.classList.add('is-active');
                 }
 
                 submitButtons.forEach(button => {
@@ -190,6 +196,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             if (target){
                                 modal.classList.remove('modal-loading')
                                 window.Spectechnika_Api.modal.close(target);
+                            }
+                            if (loading){
+                                loading.classList.remove('is-active')
                             }
 
                             openPopup('success');

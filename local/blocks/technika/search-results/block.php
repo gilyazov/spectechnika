@@ -76,16 +76,20 @@ global $arrFilter;
                         </div>
                         <div class="control-panel__view-quantity view-quantity">
                             <div class="view-quantity__body">
-                                <div class="view-quantity__title"><span>Количество</span><span>на странице</span><span>:</span>
+                                <div class="view-quantity__title"><span>Количество</span> <span>на странице</span><span>:</span>
                                 </div>
                                 <?php
+                                $arrFilter = array_merge($arrFilter, [
+                                    "SEARCHABLE_CONTENT" => "%" . $classBlock->get('SEARCH_REQUEST') . "%"
+                                ]);
+
                                 $arFilter = [
                                     "IBLOCK_ID" => 1,
                                     "ACTIVE" => "Y"
                                 ];
                                 $count = CIBlockElement::GetList(false, array_merge($arFilter, $arrFilter), array('IBLOCK_ID'))->Fetch()['CNT'];
                                 ?>
-                                <button class="view-quantity__button"><span class="view-quantity__span"><?=$count?></span>
+                                <button class="view-quantity__button"><span class="view-quantity__span"><?=($count ?:0)?></span>
                                 </button>
                             </div>
                         </div>
@@ -107,11 +111,6 @@ global $arrFilter;
                         </div>
                     </div>
 
-                    <?php
-                    $arrFilter = array_merge($arrFilter, [
-                        "SEARCHABLE_CONTENT" => "%" . $classBlock->get('SEARCH_REQUEST') . "%"
-                    ]);
-                    ?>
                     <?php $APPLICATION->IncludeComponent(
                         "bitrix:news.list",
                         "category__list",

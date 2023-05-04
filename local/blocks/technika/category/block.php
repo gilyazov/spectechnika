@@ -94,7 +94,7 @@
                                 $count = CIBlockElement::GetList(false, array_merge($arFilter, $arrFilter), array('IBLOCK_ID'))->Fetch()['CNT'];
                                 ?>
                                 <button class="view-quantity__button">
-                                    <span class="view-quantity__span"><?=$count?></span>
+                                    <span class="view-quantity__span"><?=($count ?:0)?></span>
                                 </button>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                             "CACHE_TYPE" => "A",
                             "CHECK_DATES" => "Y",
                             "DETAIL_URL" => "",
-                            "DISPLAY_BOTTOM_PAGER" => "N",
+                            "DISPLAY_BOTTOM_PAGER" => "Y",
                             "DISPLAY_DATE" => "N",
                             "DISPLAY_NAME" => "N",
                             "DISPLAY_PICTURE" => "N",
@@ -153,7 +153,7 @@
                             "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
                             "PAGER_SHOW_ALL" => "N",
                             "PAGER_SHOW_ALWAYS" => "N",
-                            "PAGER_TEMPLATE" => ".default",
+                            "PAGER_TEMPLATE" => "show_more",
                             "PAGER_TITLE" => "Новости",
                             "PARENT_SECTION" => "",
                             "PARENT_SECTION_CODE" => $classBlock->get('SECTION_CODE'),
@@ -173,8 +173,6 @@
                             "STRICT_SECTION_CHECK" => "N"
                         )
                     );?>
-                    <a class="category__add-button button-border-line" href="#"><span class="default-label">Показать ещё</span>
-                    </a>
 
                     <?php if($_REQUEST['set_filter'] === 'Y' && $_GET['ajax'] !== 'N') {
                         die();
