@@ -85,20 +85,45 @@
                     </div>
                 </div>
                 <div class="footer__col footer__col--large">
-                    <form class="footer__form line-form">
-                        <div class="line-form__wrapper">
-                            <label class="line-form__label">Подпишитесь и получите<br>подарок за покупку!</label>
-                            <div class="line-form__input-wrapper">
-                                <input class="line-form__input" type="text" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$">
-                                <button class="line-form__button line-form__button--text button-primary button-primary--black" type="submit">Подписаться</button>
-                                <button class="line-form__button line-form__button--icon" type="submit">
-                                    <svg class="icon icon-form-arrow">
-                                        <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-mono.svg#form-arrow"></use>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    <?php $APPLICATION->IncludeComponent(
+                        "spectechnika:iblock.element.add.form",
+                        "subscribe",
+                        Array(
+                            "PREFIX" => "subscribe",
+                            "IS_DARK" => "Y",
+                            "THEME" => "Получить расчет лизинга",
+                            "CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+                            "CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+                            "CUSTOM_TITLE_DETAIL_PICTURE" => "",
+                            "CUSTOM_TITLE_DETAIL_TEXT" => "",
+                            "CUSTOM_TITLE_IBLOCK_SECTION" => "",
+                            "CUSTOM_TITLE_NAME" => "Ваше имя",
+                            "CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+                            "CUSTOM_TITLE_PREVIEW_TEXT" => "",
+                            "CUSTOM_TITLE_TAGS" => "",
+                            "DEFAULT_INPUT_SIZE" => "30",
+                            "DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+                            "ELEMENT_ASSOC" => "CREATED_BY",
+                            "GROUPS" => array("2"),
+                            "IBLOCK_ID" => "9",
+                            "IBLOCK_TYPE" => "forms",
+                            "LEVEL_LAST" => "N",
+                            "LIST_URL" => "",
+                            "MAX_FILE_SIZE" => "0",
+                            "MAX_LEVELS" => "100000",
+                            "MAX_USER_ENTRIES" => "100000",
+                            "PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+                            "PROPERTY_CODES" => array("NAME"),
+                            "PROPERTY_CODES_REQUIRED" => array("NAME"),
+                            "RESIZE_IMAGES" => "N",
+                            "SEF_MODE" => "N",
+                            "STATUS" => "ANY",
+                            "STATUS_NEW" => "N",
+                            "USER_MESSAGE_ADD" => "Спасибо, ваша заявка отправлена",
+                            "USER_MESSAGE_EDIT" => "",
+                            "USE_CAPTCHA" => "N"
+                        )
+                    );?>
                 </div>
                 <div class="footer__col footer__col--small">
                     <a class="footer__dev dev" href="https://markweber.agency" target="_blank" rel="nofollow"><span class="dev__span">Сайт разработан</span>

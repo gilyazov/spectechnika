@@ -20,6 +20,10 @@ return array(
             'name' => 'Логотип декстоп',
             'type' => 'img',
             'dimensions' => array('maxWidth' => 250, 'maxHeight' => 50)
+        ],
+        '.categories-menu__count-value' => [
+            'name' => 'Количество моделей',
+            'type' => 'text',
         ]
 	),
     'style' => array(

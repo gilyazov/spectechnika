@@ -159,11 +159,11 @@
                                         <div class="nav-popup__address">г. Набережные Челны,<br>Транспортный проезд, 2</div>
                                     </div>
                                     <div class="nav-popup__buttons">
-                                        <button class="product-card__button nav-popup__button nav-popup__button--compare">
+                                        <a class="product-card__button nav-popup__button nav-popup__button--compare" href="/compare/">
                                             <svg class="icon icon-comparison">
                                                 <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-multi.svg#comparison"></use>
                                             </svg><span>сравнение</span>
-                                        </button>
+                                        </a>
                                         <button class="product-card__button nav-popup__button nav-popup__button--search modal-close">
                                             <svg class="icon icon-search">
                                                 <use xlink:href="/local/js/template/build/assets/images/sprites/sprite-mono.svg#search"></use>
